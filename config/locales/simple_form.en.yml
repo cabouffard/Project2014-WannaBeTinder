@@ -1,0 +1,18 @@
+en:
+  simple_form:
+    hints: &simple_form_hints
+      optional: "(optional)"
+
+    labels:
+      comment:
+        body: "Comment"
+
+      defaults: &default_fields
+        first_name: "First name"
+        last_name: "Surname"
+        email: "Email"
+        phone: "Phone"
+
+  fields: *default_fields
+  hints: *simple_form_hints
+

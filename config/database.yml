@@ -1,0 +1,8 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: project_name
+  pool: 5
+  host: 127.0.0.1
+  username: postgres
+  password:
