@@ -15,6 +15,9 @@ gem 'therubyracer',  platforms: :ruby
 # I18n for default messages
 gem 'rails-i18n'
 
+# Debugger
+gem 'debugger'
+
 # Web server
 gem 'puma'
 gem 'foreman', '~> 0.66.0'
