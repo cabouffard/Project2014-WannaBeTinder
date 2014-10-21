@@ -1,0 +1,10 @@
+<%= simple_form_for resource, as: resource_name, url: session_path(resource_name) do |f| %>
+  <%= f.input :email, placeholder: true, label: false, error: false, autofocus: true %>
+  <%= f.input :password, placeholder: true, label: false, error: false %>
+  <% if devise_mapping.rememberable? %>
+    <%= f.input :remember_me, as: :boolean, wrapper_class: 'checkbox', label: t('devise.sessions.new.remember_me') %>
+  <% end %>
+  <div>
+    <%= f.button :button, t('devise.sessions.new.submit'), class: 'btn-primary btn-block' %>
+  </div>
+<% end %>

@@ -9,9 +9,15 @@ en:
 
       defaults: &default_fields
         first_name: "First name"
-        last_name: "Surname"
+        last_name: "Last name"
         email: "Email"
         phone: "Phone"
+        password: "Password"
+        password_confirmation: "Confirm password"
+
+    placeholders:
+      defaults:
+        << : *default_fields
 
   fields: *default_fields
   hints: *simple_form_hints

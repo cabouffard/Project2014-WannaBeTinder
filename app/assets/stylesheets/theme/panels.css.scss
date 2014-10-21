@@ -1,0 +1,46 @@
+.panel-heading {
+  cursor: pointer;
+}
+
+.panel-title {
+  font-weight: bold;
+}
+
+.panel-pills {
+  border-top-left-radius: $border-radius-base;
+  border-top-right-radius: $border-radius-base;
+}
+
+.panel-group .panel-heading + .panel-collapse .panel-pills + .panel-body {
+  border-top: 0;
+}
+
+.panel-steps {
+  padding-left: $grid-gutter-width;
+  padding-right: $grid-gutter-width;
+  padding-top: 50px;
+  margin-left: -$grid-gutter-width;
+  margin-right: -$grid-gutter-width;
+  border-bottom: 1px solid $gray-lighter;
+}
+
+.panel-intro {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.panel-nav {
+  margin: 20px 0;
+
+  .btn {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: $font-size-base;
+
+    @media (min-width: $screen-tablet) {
+      width: auto;
+      margin-bottom: 0;
+      font-size: $font-size-large;
+    }
+  }
+}

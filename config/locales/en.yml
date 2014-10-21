@@ -4,7 +4,17 @@ en:
   # -----------------------------------------------------------------------------
 
   # navigation
+  navbar:
+    nav:
+      home: "home"
+    user:
+      sign_out: "Sign out"
+      sign_in: "Sign in"
 
-  nav:
-    home: "home"
-    sign_out: "sign out"
+  footer:
+    copyright: "All rights reserved © %{date} Wannabe Tinder"
+
+  locales:
+    toggle: "Français"
+    en: "English"
+    fr: "French"

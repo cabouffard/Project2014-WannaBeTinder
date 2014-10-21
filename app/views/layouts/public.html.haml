@@ -1,0 +1,8 @@
+!!!
+%html
+  %head= render "layouts/head", assets_name: "public"
+  %body{"data-env" => Rails.env}
+    = render "layouts/analytics" if Rails.env == "production"
+    .container
+      = render "layouts/public_nav"
+      = yield

@@ -1,0 +1,19 @@
+.form-control-digit {
+  display: inline-block;
+  width: 60px;
+  padding-right: 0;
+  text-align: center;
+}
+
+.form-group.radio_buttons {
+  > label.radio {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+ @media (min-width: $screen-sm-min) {
+  .form-group-pushed {
+    margin-top: $line-height-computed + 5px;
+  }
+}

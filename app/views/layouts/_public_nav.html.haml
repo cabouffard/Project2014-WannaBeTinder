@@ -1,0 +1,8 @@
+%nav.navbar{:role => "navigation"}
+  .navbar-header
+    %a.navbar-brand{:href => root_path}= image_tag 'logo-light.png', alt: 'Wannabe Tinder'
+  %div
+    %ul.nav.navbar-nav.navbar-right
+      %li= link_to t("navbar.user.sign_in"), new_user_session_path(locale: nil)
+      %li= I18n.locale
+      %li= link_to t("locales.toggle"), locale: reverse_locale(I18n.locale)

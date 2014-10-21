@@ -1,0 +1,16 @@
+!!!
+%html
+  %head= render "layouts/head"
+  %body{"data-env" => Rails.env}
+    = render "layouts/analytics" if Rails.env == "production"
+    %header.app-nav.app-nav-flush= render "layouts/app_nav"
+    .app-container.app-container-small
+      .app-main
+        .app-flash
+          = render "layouts/flash"
+        .row
+          .col-sm-12
+            .app-content
+              = yield
+      .app-footer
+        = render "layouts/footer"

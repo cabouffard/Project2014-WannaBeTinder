@@ -12,6 +12,12 @@ fr-CA:
         last_name: "Nom"
         email: "Courriel"
         phone: "Téléphone"
+        password: "Mot de passe"
+        password_confirmation: "Confirmer le mot de passe"
+
+    placeholders:
+      defaults:
+        << : *default_fields
 
   fields: *default_fields
   hints: *simple_form_hints

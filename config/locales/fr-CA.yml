@@ -1,10 +1,20 @@
-en:
+fr-CA:
   # -----------------------------------------------------------------------------
   # layout
   # -----------------------------------------------------------------------------
 
   # navigation
+  navbar:
+    nav:
+      home: "Accueil"
+    user:
+      sign_in: "Se connecter"
+      sign_out: "Se déconnecter"
 
-  nav:
-    home: "Accueil"
-    sign_out: "Se déconnecter"
+  footer:
+    copyright: "Tous droits réservés © %{date} Wannabe Tinder"
+
+  locales:
+    toggle: "English"
+    en: "Anglais"
+    fr: "Français"

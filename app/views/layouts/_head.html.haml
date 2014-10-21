@@ -1,0 +1,23 @@
+- assets_name ||= "application"
+%title= content_for?(:title) ? sanitize("#{yield(:title)} — Wannabe Tinder") : "Wannabe Tinder"
+= csrf_meta_tags
+%meta{:charset => "utf-8"}/
+= stylesheet_link_tag    assets_name, media: "all", "data-turbolinks-track" => true
+= javascript_include_tag assets_name, "data-turbolinks-track" => true
+-# :javascript
+-#   I18n.defaultLocale = "#{I18n.default_locale}";
+-#   I18n.locale = "#{I18n.locale}";
+%meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
+%meta{:content => "width=device-width,minimum-scale=1,maximum-scale=1", :name => "viewport"}/
+%meta{:content => I18n.locale, :name => "locale"}/
+%meta{:content => root_path, :name => "root_url"}/
+%meta{:content => "yes", :name => "apple-mobile-web-app-capable"}/
+%meta{:content => "black", :name => "apple-mobile-web-app-status-bar-style"}/
+%meta{:content => "Wannabe Tinder", :name => "apple-mobile-web-app-title"}/
+%link{:href => "/favicon.ico", :rel => "shortcut icon"}/
+%link{:href => "/apple-touch-icon-144-precomposed.png", :rel => "apple-touch-icon-precomposed", :sizes => "144x144"}/
+%link{:href => "/apple-touch-icon-114-precomposed.png", :rel => "apple-touch-icon-precomposed", :sizes => "114x114"}/
+%link{:href => "/apple-touch-icon-72-precomposed.png", :rel => "apple-touch-icon-precomposed", :sizes => "72x72"}/
+%link{:href => "/apple-touch-icon-57-precomposed.png", :rel => "apple-touch-icon-precomposed"}/
+- if content_for?(:head)
+  = yield(:head)

@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 # Use SCSS for stylesheets
@@ -12,8 +11,21 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer',  platforms: :ruby
 
+# Font awesome
+gem "font-awesome-rails"
+
+# Loading bar
+gem "nprogress-rails"
+
+# Nice SASS mixins
+gem "bourbon"
+
 # I18n for default messages
 gem 'rails-i18n'
+
+# Authentication
+gem "devise"
+gem "devise-i18n"
 
 # Debugger
 gem 'debugger'
@@ -26,7 +38,7 @@ gem 'foreman', '~> 0.66.0'
 gem 'sidekiq'
 
 # Boostrap
-gem 'bootstrap-sass', git: 'https://github.com/thomas-mcdonald/bootstrap-sass.git'
+gem 'bootstrap-sass'
 
 # jQuery with rails addons
 gem 'jquery-rails'
@@ -35,8 +47,11 @@ gem 'jquery-ui-rails'
 # Act as list
 gem 'acts_as_list'
 
+# Act as paranoid
+gem 'acts_as_paranoid', git: 'https://github.com/ActsAsParanoid/acts_as_paranoid'
+
 # Encryption
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.1.0'
 
 # Postgres + Postgres full-text search
 gem 'pg', '~> 0.14.1'

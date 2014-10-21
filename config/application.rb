@@ -69,5 +69,14 @@ module Projet
     config.assets.version = '1.0'
 
     config.i18n.enforce_available_locales = false
+
+    # Devise controller layouts
+    config.to_prepare do
+      Devise::SessionsController.layout "app_small"
+      Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "app_full" : "app_small" }
+      Devise::ConfirmationsController.layout "app_small"
+      Devise::UnlocksController.layout "app_small"
+      Devise::PasswordsController.layout "app_small"
+    end
   end
 end

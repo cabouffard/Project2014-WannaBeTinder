@@ -1,0 +1,35 @@
+.btn {
+  > .fa {
+    vertical-align: middle;
+
+    &.fa-append {
+      margin-left: 10px;
+    }
+
+    &.fa-prepend {
+      margin-right: 10px;
+    }
+  }
+
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn-outline {
+  display: inline-block;
+  border: 3px solid $white;
+  color: $white;
+  text-transform: uppercase;
+  font-family: $headings-font-family;
+
+  &:hover, &:focus {
+    outline: none;
+    box-shadow: none;
+    background: $white;
+    color: $brand-primary;
+  }
+}
+
+.btn-xlg {
+  padding: 15px 40px;
+  font-size: 24px;
+}

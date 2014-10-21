@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+// Variables & Mixins
+@import "theme/variables";
+@import "theme/mixins";
+
+// Vendor
+@import "bourbon";
+@import "nprogress";
+@import "nprogress-bootstrap";
+
+// Fonts
+@import "font-awesome";
+
+// Theme
+// Files in the "theme" folder overwrite bootstrap's defaults, try to keep same names
+// They also add any "generic UI elements"
+// https://github.com/twbs/bootstrap-sass/tree/master/vendor/assets/stylesheets/bootstrap
+@import "bootstrap";
+@import "theme/*";
+
+// Modules
+// App specific modules (reusable) (Contacts, Calendar, Tasks, etc..)
+@import "modules/*";

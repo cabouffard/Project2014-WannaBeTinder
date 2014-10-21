@@ -1,0 +1,77 @@
+// Headings
+// -------------------------
+
+h1, .h1 { font-size: floor($font-size-base * 2.40); } // ~33px
+h2, .h2 { font-size: floor($font-size-base * 2.00); } // ~28px
+h3, .h3 { font-size: ceil($font-size-base * 1.60); }  // ~23px
+h4, .h4 { font-size: ceil($font-size-base * 1.40); }  // ~17px
+h5, .h5 { font-size: ceil($font-size-base * 1.30); }
+h6, .h6 { font-size: ceil($font-size-base * 1.20); }  // ~12px
+
+h1 small, .h1 small { font-size: ceil($font-size-base * 1.70); } // ~24px
+h2 small, .h2 small { font-size: ceil($font-size-base * 1.25); } // ~18px
+
+h3 small, .h3 small,
+h4 small, .h4 small { font-size: $font-size-base; }
+
+h1, .h1 {
+  color: $brand-primary
+}
+
+.h-flush {
+  margin-top: 0;
+}
+
+// Page header
+// -------------------------
+
+.page-header {
+  margin-top: $grid-gutter-width;
+
+  .dropdown-menu {
+    left: auto;
+    right: 0;
+  }
+
+  .nav-tabs + h1,
+  .nav-tabs + h2 {
+    margin-top: $line-height-computed * 1.5;
+  }
+}
+
+.page-header-enclosed {
+  margin-top: 0;
+  margin-left: -$grid-gutter-width;
+  margin-right: -$grid-gutter-width;
+  padding: ($grid-gutter-width / 2) $grid-gutter-width;
+  text-align: center;
+  background: #fdfdfe;
+
+  > h1 {
+    margin: 0;
+    font-weight: 600;
+    font-size: ceil($font-size-base * 1.75);
+  }
+
+  > p {
+    margin-top: $line-height-computed / 2;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+// Section header
+// -------------------------
+
+.section-header {
+  padding-bottom: (($line-height-computed / 2) - 6);
+  margin: 0 0 $line-height-computed 0;
+  border-bottom: 1px solid $page-header-border-color;
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+  }
+}

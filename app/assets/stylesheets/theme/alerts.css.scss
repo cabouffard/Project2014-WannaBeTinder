@@ -1,0 +1,33 @@
+// Full
+// -------------------------
+
+.alert-full {
+  border-radius: 0;
+  border-left: 0;
+  border-right: 0;
+  margin-left: -$grid-gutter-width;
+  margin-right: -$grid-gutter-width;
+  padding: ($grid-gutter-width / 2) $grid-gutter-width;
+
+  > .media {
+    > .pull-left {
+      margin-right: $grid-gutter-width / 2;
+
+      > i {
+        font-size: 48px;
+      }
+    }
+
+    > .media-body > :last-child {
+      margin-bottom: 0;
+    }
+
+    > .media-body > :first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.alert-dismissable .close {
+  top: 2px;
+}

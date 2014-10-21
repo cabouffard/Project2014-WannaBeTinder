@@ -1,0 +1,20 @@
+.nav-title {
+  padding: $nav-link-padding;
+  color: $gray-light;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav-tabs-spaced {
+  margin-bottom: $line-height-computed;
+}
+
+.nav-sticky {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+
+  @media (max-device-width: $screen-md)  {
+    position: static !important;
+  }
+}
