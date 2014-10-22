@@ -46,6 +46,13 @@ CREATE TABLE users (
     id integer NOT NULL,
     first_name character varying(255) NOT NULL,
     last_name character varying(255) NOT NULL,
+    street character varying(255),
+    city character varying(255),
+    state character varying(255),
+    country character varying(255),
+    profession character varying(255),
+    work_at character varying(255),
+    picture character varying(255),
     email character varying(255) DEFAULT ''::character varying NOT NULL,
     encrypted_password character varying(255) DEFAULT ''::character varying NOT NULL,
     reset_password_token character varying(255),
@@ -61,9 +68,12 @@ CREATE TABLE users (
     confirmation_sent_at timestamp without time zone,
     unconfirmed_email character varying(255),
     admin boolean DEFAULT false NOT NULL,
+    locale character varying(255) DEFAULT 'en'::character varying,
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
-    deleted_at timestamp without time zone
+    deleted_at timestamp without time zone,
+    latitude double precision,
+    longitude double precision
 );
 
 
@@ -123,6 +133,13 @@ CREATE UNIQUE INDEX index_users_on_email_and_deleted_at ON users USING btree (em
 
 
 --
+-- Name: index_users_on_latitude_and_longitude; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_users_on_latitude_and_longitude ON users USING btree (latitude, longitude);
+
+
+--
 -- Name: index_users_on_reset_password_token; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -143,4 +160,6 @@ CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (v
 SET search_path TO "$user",public;
 
 INSERT INTO schema_migrations (version) VALUES ('20141020202716');
+
+INSERT INTO schema_migrations (version) VALUES ('20141022030203');
 

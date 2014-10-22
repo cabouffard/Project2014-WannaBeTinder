@@ -17,9 +17,18 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      resources :person
+      resources :user
     end
   end
+  resources :temp do
+  end
+
+  # Search
+  get 'search', to: 'search#index'
+
+  # Sidekiq panel
+  require "sidekiq/web"
+  mount Sidekiq::Web => "sidekiq"
 
   # Devise & user related
   # https://github.com/plataformatec/devise/blob/master/lib/devise/rails/routes.rb

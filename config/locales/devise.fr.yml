@@ -1,6 +1,6 @@
 # Additional translations at https://github.com/plataformatec/devise/wiki/I18n
 
-fr-CA:
+fr:
   devise:
     confirmations:
       confirmed: 'Votre compte a été validé.'
@@ -32,6 +32,12 @@ fr-CA:
       send_paranoid_instructions: "Si votre e-mail existe dans notre base de données, vous allez recevoir un lien de réinitialisation par e-mail"
       updated: 'Votre mot de passe a été édité avec succès, vous êtes maintenant connecté'
       updated_not_active: 'Votre mot de passe a été changé avec succès.'
+      new:
+        title: "Mot de passe oublié?"
+        submit: "Envoyer les instructions"
+      edit:
+        title: "Changer votre mot de passe"
+        submit: "Changer mon mot de passe"
     registrations:
       new:
         title: "Inscription"
@@ -50,6 +56,10 @@ fr-CA:
       signed_up_but_unconfirmed: 'Un message contenant un lien de confirmation a été envoyé à votre adresse email. Ouvrez ce lien pour activer votre compte.'
       update_needs_confirmation: "Votre compte a bien été mis à jour mais nous devons vérifier votre nouvelle adresse email. Merci de vérifier vos emails et de cliquer sur le lien de confirmation pour finaliser la validation de votre nouvelle adresse."
       updated: 'Votre compte a été modifié avec succès.'
+    confirmations:
+      new:
+        title: "Instructions de confirmation"
+        submit: "Renvoyer"
     sessions:
       signed_in: "Connecté."
       signed_out: "Déconnecté."

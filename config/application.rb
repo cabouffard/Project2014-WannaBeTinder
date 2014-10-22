@@ -31,7 +31,7 @@ module Projet
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-    config.i18n.available_locales = [:en, :'fr-CA']
+    config.i18n.available_locales = [:en, :fr]
     config.i18n.default_locale = :en
 
     # Configure the default encoding used in templates for Ruby 1.9.
@@ -51,19 +51,7 @@ module Projet
     config.assets.initialize_on_precompile = false
 
     # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-    config.assets.precompile += [
-        'session.css',
-        'session.js',
-        'flow.css',
-        'flow.js',
-        'pdf.css',
-        'pdf.js',
-        'fonts/font-awesome/font-awesome.css',
-        'mailer.css',
-        'wysiwyg.css',
-        'selectivizr-min.js',
-        'select2_locale_fr.js'
-    ]
+    config.assets.precompile += ["public.css", "mailer.css", "public.js"]
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'

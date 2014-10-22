@@ -26,9 +26,17 @@ gem 'rails-i18n'
 # Authentication
 gem "devise"
 gem "devise-i18n"
+gem "devise-async"
 
 # Debugger
 gem 'debugger'
+
+# Document uploading
+gem "carrierwave"
+gem "fog"
+
+# Image manipulation
+gem "mini_magick"
 
 # Web server
 gem 'puma'
@@ -36,6 +44,10 @@ gem 'foreman', '~> 0.66.0'
 
 # Background jobs
 gem 'sidekiq'
+gem "sinatra", ">= 1.3.0", require: nil
+
+# Geolocation
+gem "geocoder"
 
 # Boostrap
 gem 'bootstrap-sass'
@@ -65,6 +77,7 @@ gem 'active_model_serializers'
 
 # Form
 gem 'simple_form', git: 'https://github.com/plataformatec/simple_form.git'
+gem 'country_select'
 
 # Turbolinks
 gem 'turbolinks'
@@ -78,7 +91,17 @@ gem 'annotate'
 # Use HAML for templating
 gem 'haml-rails'
 
+# HTML emails
+gem "premailer-rails"
+
 group :development do
+  # Email in dev
+  gem "letter_opener"
+
+  # Hide asset requests from development logs
+  gem "quiet_assets"
+
+  # Rails errors on steroids
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'meta_request'

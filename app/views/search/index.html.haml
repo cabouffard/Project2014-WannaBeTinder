@@ -1,0 +1,23 @@
+.row
+  %h1= "Welcome back #{current_user.name}"
+
+%hr/
+.row
+  - if @users.present?
+    - @users.in_groups_of(2).each do |group|
+      .row
+        - group.each do |user|
+          .col-sm-6.text-center
+            = render("user/user", user: user) if user
+    -# - @users.each do |user|
+    -#   = render("user/user", user: user)
+  - else
+    %h2= "I am looking for"
+    = simple_form_for :search, url: search_url, method: :get do |f|
+      - @professions.each do |profession|
+        = f.button :button, profession.titleize, value: profession, name: "profession", class: "btn-primary btn-block text-center"
+    %h2= "Nah, I want to do the following"
+    = link_to t("navbar.user.account_settings"), edit_user_registration_path, class: 'btn btn-primary btn-block text-center'
+    %btn.btn.btn-primary.btn-block.text-center= "Clear next list"
+
+

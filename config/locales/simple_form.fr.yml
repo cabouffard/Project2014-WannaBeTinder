@@ -1,5 +1,8 @@
-fr-CA:
+fr:
   simple_form:
+    error_notification:
+      default_message: "Veuillez corriger les erreurs dans le formulaire ci-dessous."
+
     hints: &simple_form_hints
       optional: "(optionnel)"
 
@@ -12,6 +15,11 @@ fr-CA:
         last_name: "Nom"
         email: "Courriel"
         phone: "Téléphone"
+        street: "Adresse"
+        city: "Ville"
+        state: "Province"
+        country: "Pays"
+        profession: "Je suis un"
         password: "Mot de passe"
         password_confirmation: "Confirmer le mot de passe"
 

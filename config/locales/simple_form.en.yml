@@ -1,5 +1,8 @@
 en:
   simple_form:
+    error_notification:
+      default_message: "Please review the problems in the form below."
+
     hints: &simple_form_hints
       optional: "(optional)"
 
@@ -12,6 +15,11 @@ en:
         last_name: "Last name"
         email: "Email"
         phone: "Phone"
+        street: "Street"
+        city: "City"
+        state: "State"
+        country: "Country"
+        profession: "I am a"
         password: "Password"
         password_confirmation: "Confirm password"
 

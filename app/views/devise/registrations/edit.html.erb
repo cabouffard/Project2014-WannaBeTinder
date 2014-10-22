@@ -1,27 +1,47 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<% title t("devise.registrations.edit.title") %>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
+<header class="page-header">
+  <h1>
+    <%= t("devise.registrations.edit.title") %>
+  </h1>
+</header>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+<%= simple_form_for resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true } do |f| %>
+  <fieldset>
+    <legend>
+      <%= t("account.title_general") %>
+    </legend>
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.input :first_name %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :last_name %>
+      </div>
+    </div>
+    <%= f.input :email, hint: (resource.pending_reconfirmation? ? t("devise.registrations.edit.unconfirmed_email", email: resource.unconfirmed_email) : nil) %>
+    <%= f.input :profession, collection: User::PROFESSIONS, prompt: "Je suis un", include_blank: false %>
+  </fieldset>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
+  <fieldset>
+    <legend>
+      <%= t("account.title_position") %>
+    </legend>
+    <%= f.input :street %>
+    <%= f.input :city %>
+    <%= f.input :state %>
+    <%= f.input :country, as: :string %>
+  </fieldset>
 
-    <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
-    <%= f.input :password_confirmation, required: false %>
-    <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
-  </div>
+  <!-- <fieldset> -->
+  <!--   <legend> -->
+      <%# <%= t("account.title_password") %>
+  <!--   </legend> -->
+    <%# <%= f.input :password, hint: t("fields_info.minimum_8_chars") %>
+    <%# <%= f.input :password_confirmation %>
+  <!-- </fieldset> -->
 
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+  <div>
+    <%= f.button :button, t("devise.registrations.edit.submit"), class: "btn-primary" %>
   </div>
 <% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>

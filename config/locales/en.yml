@@ -8,13 +8,27 @@ en:
     nav:
       home: "home"
     user:
+      admin_settings: "Admin settings"
+      account_settings: "My account"
       sign_out: "Sign out"
       sign_in: "Sign in"
 
   footer:
     copyright: "All rights reserved © %{date} Wannabe Tinder"
 
+  fields_info:
+    optional: "(optional)"
+    minimum_8_chars: "(minimum 8 characters)"
+
   locales:
     toggle: "Français"
     en: "English"
     fr: "French"
+
+  users:
+    success_update: "Your account was successfully updated."
+
+  account:
+    title_general: "General Information"
+    title_position: "About your position"
+    title_password: "Change your password"

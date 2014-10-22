@@ -4,7 +4,7 @@ class LocaleController < ApplicationController
   def update
     case params[:locale]
     when "fr"
-      locale = :'fr-CA'
+      locale = :fr
     when "en"
       locale = :en
     end

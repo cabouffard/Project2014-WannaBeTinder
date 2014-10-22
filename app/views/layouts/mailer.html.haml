@@ -1,0 +1,29 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %meta{:content => "width=device-width", :name => "viewport"}/
+    = stylesheet_link_tag :mailer
+    %title Wannabe Tinder
+  %body{:bgcolor => "#f6f6f6"}
+    %table.header-wrap
+      %tr
+        %td.container.text-center
+          = image_tag 'http://tindertrolls.com/wp-content/uploads/2014/02/cropped-tinder-trolls-logo.png', alt: 'Wannabee Tinder'
+    %table.body-wrap
+      %tr
+        %td.container{:bgcolor => "#ffffff"}
+          .content
+            %table
+              %tr
+                %td
+                  = yield
+    %table.footer-wrap
+      %tr
+        %td.container
+          .content
+            %table
+              %tr
+                %td{:align => "center"}
+                  %p
+                    = t('mailer.footer')

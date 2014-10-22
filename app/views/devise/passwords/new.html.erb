@@ -1,14 +1,10 @@
-<h2>Forgot your password?</h2>
+<%= render "shared/header", title: t("devise.passwords.new.title"), intro: nil %>
 
-<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+<%= simple_form_for resource, as: resource_name, url: password_path(resource_name), html: { method: :post } do |f| %>
   <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Send me reset password instructions" %>
+  <%= f.input :email, placeholder: true, label: false, error: false, autofocus: true %>
+  <div>
+    <%= f.button :button, t("devise.passwords.new.submit"), class: "btn-primary btn-block" %>
   </div>
 <% end %>
 

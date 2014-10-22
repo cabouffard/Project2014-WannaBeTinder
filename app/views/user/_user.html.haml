@@ -1,0 +1,19 @@
+-# .col-sm-4
+-# .col-sm-4
+.row
+  = image_tag(user.picture? ? user.picture_url(:thumb) : "blank-avatar.png", alt: "Avatar", class: "user-avatar user-#{user.profession}-avatar")
+.row
+  %strong= "Informations"
+  %p= "Name : #{user.first_name}"
+  %p= "Profession : #{user.profession.titleize}"
+  %p= "Work at : #{user.work_at}" if user.work_at
+  %p= "City : #{user.city}"
+  %p= "State : #{user.state}" if current_user.state != user.state
+  %p= "Country : #{user.country}" if current_user.country != user.country
+  %p= "Distance : ~10 km from you"
+.row
+  %btn.btn.btn-lg.btn-danger="Next"
+  %btn.btn.btn-lg.btn-success="Contact"
+  %btn.btn.btn-lg.btn-primary.btn-block= "I am looking for something else"
+  %btn.btn.btn-lg.btn-primary.btn-block= "These people are not from my area"
+-# .col-sm-4

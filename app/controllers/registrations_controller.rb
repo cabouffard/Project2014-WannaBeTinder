@@ -3,7 +3,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   def update
     if self.resource.update_attributes(devise_parameter_sanitizer.sanitize(:account_update))
-      flash[:success] = t("general.success.update")
+      flash[:success] = t("users.success_update")
       redirect_to root_url
     else
       flash.now[:alert] = t("simple_form.error_notification.default_message")
@@ -19,11 +19,11 @@ class RegistrationsController < Devise::RegistrationsController
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:account_update) do |u|
-      u.permit(:email, :first_name, :last_name)
+      u.permit(:profession, :email, :first_name, :last_name, :street, :city, :state, :country, :password, :password_confirmation)
     end
 
     devise_parameter_sanitizer.for(:sign_up) do |u|
-      u.permit(:sign_up_type, :email, :password, :password_confirmation, :first_name, :last_name)
+      u.permit(:profession, :email, :password, :password_confirmation, :first_name, :last_name)
     end
   end
 

@@ -1,4 +1,4 @@
-fr-CA:
+fr:
   # -----------------------------------------------------------------------------
   # layout
   # -----------------------------------------------------------------------------
@@ -8,13 +8,27 @@ fr-CA:
     nav:
       home: "Accueil"
     user:
+      admin_settings: "Administration"
+      account_settings: "Mon compte"
       sign_in: "Se connecter"
       sign_out: "Se déconnecter"
 
   footer:
     copyright: "Tous droits réservés © %{date} Wannabe Tinder"
 
+  fields_info:
+    optional: "(optionnel)"
+    minimum_8_chars: "(minimum 8 caractères)"
+
   locales:
     toggle: "English"
     en: "Anglais"
     fr: "Français"
+
+  users:
+    success_update: "Votre compte a bien été modifié."
+
+  account:
+    title_general: "Information générale"
+    title_position: "Information sur la position"
+    title_password: "Changement de mot de passe"
