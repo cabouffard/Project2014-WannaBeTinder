@@ -1,0 +1,16 @@
+<fieldset>
+  <legend>
+    <%= t("account.title_general") %>
+  </legend>
+  <div class="row">
+    <div class="col-md-6">
+      <%= f.input :first_name %>
+    </div>
+    <div class="col-md-6">
+      <%= f.input :last_name %>
+    </div>
+  </div>
+  <%= f.input :email, hint: (resource.pending_reconfirmation? ? t("devise.registrations.edit.unconfirmed_email", email: resource.unconfirmed_email) : nil) %>
+  <%= f.input :profession, collection: User::PROFESSIONS, prompt: "Je suis un", include_blank: false %>
+</fieldset>
+

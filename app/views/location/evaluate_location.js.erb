@@ -1,0 +1,5 @@
+$(function() {
+  $('#modal-location-confirmation').find('.modal-content').html('<%= escape_javascript(render('location/modal_confirmation')) %>');
+  $('#modal-location-confirmation').modal('show')
+});
+

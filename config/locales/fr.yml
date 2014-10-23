@@ -3,6 +3,10 @@ fr:
   # layout
   # -----------------------------------------------------------------------------
 
+  general:
+    close: "Fermer"
+    cancel: "Annuler"
+
   # navigation
   navbar:
     nav:
@@ -27,6 +31,10 @@ fr:
 
   users:
     success_update: "Votre compte a bien été modifié."
+
+  location:
+    get_location: "Trouver ma location automatiquement"
+    title_confirm: "Confirmer les informations de locations"
 
   account:
     title_general: "Information générale"

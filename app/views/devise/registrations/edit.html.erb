@@ -7,41 +7,27 @@
 </header>
 
 <%= simple_form_for resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true } do |f| %>
-  <fieldset>
-    <legend>
-      <%= t("account.title_general") %>
-    </legend>
-    <div class="row">
-      <div class="col-md-6">
-        <%= f.input :first_name %>
-      </div>
-      <div class="col-md-6">
-        <%= f.input :last_name %>
-      </div>
-    </div>
-    <%= f.input :email, hint: (resource.pending_reconfirmation? ? t("devise.registrations.edit.unconfirmed_email", email: resource.unconfirmed_email) : nil) %>
-    <%= f.input :profession, collection: User::PROFESSIONS, prompt: "Je suis un", include_blank: false %>
-  </fieldset>
 
-  <fieldset>
-    <legend>
-      <%= t("account.title_position") %>
-    </legend>
-    <%= f.input :street %>
-    <%= f.input :city %>
-    <%= f.input :state %>
-    <%= f.input :country, as: :string %>
-  </fieldset>
-
-  <!-- <fieldset> -->
-  <!--   <legend> -->
-      <%# <%= t("account.title_password") %>
-  <!--   </legend> -->
-    <%# <%= f.input :password, hint: t("fields_info.minimum_8_chars") %>
-    <%# <%= f.input :password_confirmation %>
-  <!-- </fieldset> -->
+  <%= render "general", f: f %>
+  <%= render "location", f: f %>
+  <%# <%= render "password", f: f %>
 
   <div>
     <%= f.button :button, t("devise.registrations.edit.submit"), class: "btn-primary" %>
   </div>
+
+  <btn class="btn btn-danger js-trigger-geo" data-evaluate-location-path="<%= evaluate_location_url %>">
+    <%= t("location.get_location") %>
+  </btn>
+
 <% end %>
+
+<div class="centered" id="loading" style="display: none">
+  <%= image_tag("ajax-loader.gif", alt: "Loader") %>
+</div>
+
+<div class="modal fade js-modal-clear-on-close" id="modal-location-confirmation">
+  <div class="modal-dialog">
+    <div class="modal-content"></div>
+  </div>
+</div>

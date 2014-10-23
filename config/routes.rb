@@ -20,11 +20,14 @@ Rails.application.routes.draw do
       resources :user
     end
   end
-  resources :temp do
+
+  resource :user do
   end
 
   # Search
   get 'search', to: 'search#index'
+
+  post 'evaluate_location', to: 'location#evaluate_location'
 
   # Sidekiq panel
   require "sidekiq/web"
