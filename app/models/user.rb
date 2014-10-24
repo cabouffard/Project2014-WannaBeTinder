@@ -33,6 +33,7 @@
 #  deleted_at             :datetime
 #  latitude               :float
 #  longitude              :float
+#  denied_users           :string(255)      default([]), is an Array
 #
 # Indexes
 #
@@ -47,18 +48,12 @@ class User < ActiveRecord::Base
   acts_as_paranoid
   validates_as_paranoid
 
-  PROFESSIONS = %w(entrepreneur designer developper)
-
   mount_uploader :picture, AvatarUploader
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :async, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
-
-  scope :entrepreneurs,    -> { where(profession: PROFESSIONS[0]) }
-  scope :designers,    -> { where(profession: PROFESSIONS[1]) }
-  scope :developpers,    -> { where(profession: PROFESSIONS[2]) }
 
   # Basic information
   validates :first_name, :last_name,
@@ -104,6 +99,10 @@ class User < ActiveRecord::Base
 
   def has_location?
     city? && country?
+  end
+
+  def self.professions
+    ["entrepreneur", "designer", "developper"]
   end
 
 end

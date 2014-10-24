@@ -1,16 +1,15 @@
-.row
-  %h1= "Welcome back #{current_user.name}"
-
+%h1= "PICK PLEASE !"
 %hr/
 .row
   - if @users.present?
-    - @users.in_groups_of(2).each do |group|
-      .row
-        - group.each do |user|
-          .col-sm-6.text-center
-            = render("user/user", user: user) if user
-    -# - @users.each do |user|
-    -#   = render("user/user", user: user)
+    - @users.each_with_index do |user, index|
+      .col-sm-6.text-center
+        - if user
+          .user-details{ class: "js-profile-sheet-#{index}" }
+            = render("user/user", user: user, position: index)
+
+            -# %btn.btn.btn-lg.btn-primary.btn-block= t("search.change_category")
+            -# %btn.btn.btn-lg.btn-primary.btn-block= t("search.wrong_location")
   - else
     %h2= "I am looking for"
     = simple_form_for :search, url: search_url, method: :get do |f|
@@ -18,6 +17,5 @@
         = f.button :button, profession.titleize, value: profession, name: "profession", class: "btn-primary btn-block text-center"
     %h2= "Nah, I want to do the following"
     = link_to t("navbar.user.account_settings"), edit_user_registration_path, class: 'btn btn-primary btn-block text-center'
-    %btn.btn.btn-primary.btn-block.text-center= "Clear next list"
-
+    = link_to "Clear denied list", user_clear_list_path(current_user), remote: true, method: :patch, class: 'btn btn-primary btn-block text-center'
 

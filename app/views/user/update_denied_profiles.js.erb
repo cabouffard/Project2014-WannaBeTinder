@@ -1,0 +1,8 @@
+$(function() {
+  <% if @user.nil? %>
+    $(".js-profile-sheet-<%= @position %>").html('<%= "NONE LEFT ! " %>');
+  <% else %>
+    $(".js-profile-sheet-<%= @position %>").html('<%= escape_javascript(render('user/user', user: @user, position: @position)) %>');
+  <% end %>
+});
+

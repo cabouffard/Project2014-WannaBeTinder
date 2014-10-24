@@ -21,7 +21,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resource :user do
+  resources :user do
+    patch "deny_profile", to: "user#update_denied_profiles"
+    patch "clear_list", to: "user#clear_denied_profiles"
   end
 
   # Search

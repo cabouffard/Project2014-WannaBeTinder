@@ -73,7 +73,8 @@ CREATE TABLE users (
     updated_at timestamp without time zone,
     deleted_at timestamp without time zone,
     latitude double precision,
-    longitude double precision
+    longitude double precision,
+    denied_users character varying(255)[] DEFAULT '{}'::character varying[]
 );
 
 
@@ -162,4 +163,6 @@ SET search_path TO "$user",public;
 INSERT INTO schema_migrations (version) VALUES ('20141020202716');
 
 INSERT INTO schema_migrations (version) VALUES ('20141022030203');
+
+INSERT INTO schema_migrations (version) VALUES ('20141023225105');
 

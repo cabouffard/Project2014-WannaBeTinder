@@ -31,6 +31,10 @@ en:
 
   users:
     success_update: "Your account was successfully updated."
+    professions:
+      entrepreneur: "Entreprenneur"
+      designer: "Designer"
+      developper: "Developper"
 
   location:
     get_location: "Find my location automaticly"
@@ -40,3 +44,9 @@ en:
     title_general: "General Information"
     title_position: "About your position"
     title_password: "Change your password"
+
+  search:
+    change_category: "I am looking for a different profession"
+    wrong_location: "These people are not from my location"
+    next: "Not interested"
+    contact: "Contact this person"

@@ -7,10 +7,8 @@ fr:
       optional: "(optionnel)"
 
     labels:
-      comment:
-        body: "Commentaire"
-
       defaults: &default_fields
+        name: "Nom"
         first_name: "Prénom"
         last_name: "Nom"
         email: "Courriel"
@@ -20,6 +18,7 @@ fr:
         state: "Province"
         country: "Pays"
         profession: "Je suis un"
+        distance: "Distance"
         password: "Mot de passe"
         password_confirmation: "Confirmer le mot de passe"
 

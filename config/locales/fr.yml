@@ -31,6 +31,10 @@ fr:
 
   users:
     success_update: "Votre compte a bien été modifié."
+    professions:
+      entrepreneur: "Entreprenneur"
+      designer: "Designer"
+      developper: "Developpeur"
 
   location:
     get_location: "Trouver ma location automatiquement"
@@ -40,3 +44,9 @@ fr:
     title_general: "Information générale"
     title_position: "Information sur la position"
     title_password: "Changement de mot de passe"
+
+  search:
+    change_category: "Je recherche une différente profession"
+    wrong_location: "Ces personnes ne sont pas dans ma location"
+    next: "Pas intéressé"
+    contact: "Contacter cette personne"

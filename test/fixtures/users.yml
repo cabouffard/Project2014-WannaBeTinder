@@ -33,6 +33,7 @@
 #  deleted_at             :datetime
 #  latitude               :float
 #  longitude              :float
+#  denied_users           :string(255)      default([]), is an Array
 #
 # Indexes
 #
