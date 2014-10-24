@@ -1,4 +1,4 @@
-= simple_form_for(@user, url: user_url, remote: true, html: { class: 'form-vertical js-form-vertical' }) do |f|
+= simple_form_for(@user, url: user_url(@user), remote: true, html: { class: 'form-vertical js-form-vertical' }) do |f|
   .modal-header
     %button.close{"data-dismiss" => "modal", :type => "button"}
     %h4.modal-title= t("location.title_confirm")
@@ -8,7 +8,10 @@
     = f.input :city
     = f.input :state
     = f.input :country, as: :string
+    = f.hidden_field :latitude
+    = f.hidden_field :longitude
   .modal-footer
     = link_to t('general.close'), 'javascript:void(0);', class: 'btn btn-default', :'data-dismiss' => 'modal'
-    = f.button :button, t("devise.registrations.edit.submit"), class: 'btn-primary'
+
+    = link_to "YUP", 'javascript:void(0);', class: 'btn btn-default js-valid-location', :'data-dismiss' => 'modal'
 

@@ -37,7 +37,7 @@ Rails.application.routes.draw do
 
   # Devise & user related
   # https://github.com/plataformatec/devise/blob/master/lib/devise/rails/routes.rb
-  devise_for :users, skip: [:registrations, :password, :sessions, :confirmation]
+  devise_for :users, skip: [:registrations, :password, :confirmation]
   devise_scope :user do
     resource :registration,
       only: [:new, :create, :edit, :update],
@@ -69,9 +69,9 @@ Rails.application.routes.draw do
         controller: "account/passwords",
         as: :account_password
 
-    # Authentification
-    get     "sign-in"   => "devise/sessions#new",     as: :new_user_session
-    post    "sign-in"   => "devise/sessions#create",  as: :user_session
-    delete  "sign-out"  => "devise/sessions#destroy", as: :destroy_user_session
+    # # Authentification
+    # get     "sign-in"   => "devise/sessions#new",     as: :new_user_session
+    # post    "sign-in"   => "devise/sessions#create",  as: :user_session
+    # delete  "sign-out"  => "devise/sessions#destroy", as: :destroy_user_session
   end
 end

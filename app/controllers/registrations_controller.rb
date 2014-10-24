@@ -2,7 +2,10 @@ class RegistrationsController < Devise::RegistrationsController
   before_filter :configure_permitted_parameters
 
   def update
-    if self.resource.update_attributes(devise_parameter_sanitizer.sanitize(:account_update))
+    sanitizer = devise_parameter_sanitizer.sanitize(:account_update)
+    # self.resource.picture = sanitizer[:picture]
+    # self.resource.save
+    if self.resource.update_attributes(sanitizer)
       flash[:success] = t("users.success_update")
       redirect_to root_url
     else
@@ -19,11 +22,14 @@ class RegistrationsController < Devise::RegistrationsController
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:account_update) do |u|
-      u.permit(:profession, :email, :first_name, :last_name, :street, :city, :state, :country, :password, :password_confirmation)
+      u.permit(:picture, :picture_cache, :latitude, :longitude, :profession,
+               :email, :first_name, :last_name, :street, :city, :state,
+               :country, :password, :password_confirmation)
     end
 
     devise_parameter_sanitizer.for(:sign_up) do |u|
-      u.permit(:profession, :email, :password, :password_confirmation, :first_name, :last_name)
+      u.permit(:profession, :email, :password, :password_confirmation,
+               :first_name, :last_name)
     end
   end
 

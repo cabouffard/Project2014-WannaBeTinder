@@ -11,6 +11,6 @@
     </div>
   </div>
   <%= f.input :email, hint: (resource.pending_reconfirmation? ? t("devise.registrations.edit.unconfirmed_email", email: resource.unconfirmed_email) : nil) %>
-  <%= f.input :profession, collection: User::PROFESSIONS, prompt: "Je suis un", include_blank: false %>
+  <%= f.input :profession, collection: options_for_profession_type, prompt: "Je suis un", include_blank: false %>
 </fieldset>
 

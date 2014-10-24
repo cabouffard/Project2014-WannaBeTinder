@@ -9,7 +9,7 @@
         %td= user.first_name
       %tr
         %td= t("fields.profession")
-        %td= position_type_to_text(user.profession)
+        %td= profession_type_to_text(user.profession)
       %tr
         %td= t("fields.city")
         %td= user.city
@@ -21,7 +21,8 @@
         %td= user.country
       %tr
         %td= t("fields.distance")
-        %td= "~10 km from you"
+        -# Regarde : NUMBER_TO_HUMAN de rails
+        -# %td= "Approx. : #{current_user.distance_to([user.latitude, user.longitude], :km) * 1000} meters" if user.latitude? &&  user.longitude?
 .row
   %btn.btn.btn-lg.btn-danger.js-deny-user{ style: "margin-bottom: 5px", data: { profession: user.profession, update_url: user_deny_profile_url(user.id) } }= t("search.next")
   %btn.btn.btn-lg.btn-success.js-contact-user{ style: "margin-bottom: 5px", data: { update_url: user_url(user), user_id: user.id } }= t("search.contact")

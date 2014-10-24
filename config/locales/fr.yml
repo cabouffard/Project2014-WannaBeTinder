@@ -38,7 +38,8 @@ fr:
 
   location:
     get_location: "Trouver ma location automatiquement"
-    title_confirm: "Confirmer les informations de locations"
+    title_confirm: "Est-ce là où vous êtes?"
+    confirm_location: "Ouais, stalker !"
 
   account:
     title_general: "Information générale"

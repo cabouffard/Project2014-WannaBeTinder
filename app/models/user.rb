@@ -59,7 +59,8 @@ class User < ActiveRecord::Base
   validates :first_name, :last_name,
             presence: true, length: { maximum: 60 }
   validates :email, presence: true, email: true
-  validates :profession, :city, :state, :country, presence: true
+  validates :profession, presence: true
+  validates :city, :state, :country, presence: true, unless: :validate_password?
 
   validates :password, length: { minimum: 8 }, if: :validate_password?
 
@@ -71,8 +72,8 @@ class User < ActiveRecord::Base
       obj.country = geo.country_code
     end
   end
-  after_validation :geocode         # auto-fetch coordinates
-  after_validation :reverse_geocode
+  # after_validation :geocode         # auto-fetch coordinates
+  # after_validation :reverse_geocode
 
   # TODO: This has to be fixed
   # has_secure_password

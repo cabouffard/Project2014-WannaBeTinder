@@ -38,7 +38,8 @@ en:
 
   location:
     get_location: "Find my location automaticly"
-    title_confirm: "Confirm the information about your location"
+    title_confirm: "Is this where you are?"
+    confirm_location: "Yup, this is where I live"
 
   account:
     title_general: "General Information"
