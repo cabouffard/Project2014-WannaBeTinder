@@ -1,15 +1,13 @@
 %h1= "PICK PLEASE !"
 %hr/
 .row
-  - if @users.present?
-    - @users.each_with_index do |user, index|
-      .col-sm-6.text-center
-        - if user
-          .user-details{ class: "js-profile-sheet-#{index}" }
-            = render("user/user", user: user, position: index)
+  - if @user.present?
+    .col-sm-12.text-center
+      .user-details{ class: "js-profile-sheet" }
+        = render("user/user", user: @user)
 
-            -# %btn.btn.btn-lg.btn-primary.btn-block= t("search.change_category")
-            -# %btn.btn.btn-lg.btn-primary.btn-block= t("search.wrong_location")
+        -# %btn.btn.btn-lg.btn-primary.btn-block= t("search.change_category")
+        -# %btn.btn.btn-lg.btn-primary.btn-block= t("search.wrong_location")
   - else
     %h2= "I am looking for"
     = simple_form_for :search, url: search_url, method: :get do |f|

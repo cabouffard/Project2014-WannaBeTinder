@@ -23,6 +23,6 @@
         %td= t("fields.distance")
         %td= "~10 km from you"
 .row
-  %btn.btn.btn-lg.btn-danger.js-deny-user{ style: "margin-bottom: 5px", data: { position: position, profession: user.profession, update_url: user_deny_profile_url(user.id) } }= t("search.next")
+  %btn.btn.btn-lg.btn-danger.js-deny-user{ style: "margin-bottom: 5px", data: { profession: user.profession, update_url: user_deny_profile_url(user.id) } }= t("search.next")
   %btn.btn.btn-lg.btn-success.js-contact-user{ style: "margin-bottom: 5px", data: { update_url: user_url(user), user_id: user.id } }= t("search.contact")
 

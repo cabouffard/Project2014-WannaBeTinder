@@ -8,12 +8,12 @@ class SearchController < ApplicationController
     #                       .limit(4) if params[:profession]
     if params[:profession]
       if current_user.denied_users.any?
-        @users = User.where(profession: params[:profession])
+        @user = User.where(profession: params[:profession])
                       .where().not(id: current_user.id)
-                      .where('id NOT IN (?)', current_user.denied_users).limit(4)
+          .where('id NOT IN (?)', current_user.denied_users).limit(1).first
       else
-        @users = User.where(profession: params[:profession])
-                      .where().not(id: current_user.id).limit(4)
+        @user = User.where(profession: params[:profession])
+          .where().not(id: current_user.id).limit(1).first
       end
     end
   end

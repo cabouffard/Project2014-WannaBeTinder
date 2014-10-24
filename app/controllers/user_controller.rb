@@ -1,7 +1,6 @@
 class UserController < ApplicationController
 
   def update_denied_profiles
-    @position = params[:position]
     current_user.denied_users += [params[:user_id]]
     current_user.save
 
