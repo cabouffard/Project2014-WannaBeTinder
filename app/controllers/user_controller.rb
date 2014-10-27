@@ -12,6 +12,7 @@ class UserController < ApplicationController
       @user = User.where(profession: user_params[:profession])
         .where().not(id: current_user.id).limit(1).first
     end
+
   end
 
   def clear_denied_profiles

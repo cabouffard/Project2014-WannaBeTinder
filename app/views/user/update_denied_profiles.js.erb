@@ -1,6 +1,6 @@
 $(function() {
   <% if @user.nil? %>
-    $(".js-profile-sheet").html('<%= "NONE LEFT ! " %>');
+    $(".js-profile-sheet").html('<%= escape_javascript(render('user/no_profile')) %>');
   <% else %>
     $(".js-profile-sheet").html('<%= escape_javascript(render('user/user', user: @user)) %>');
   <% end %>

@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate_user!
   before_filter :set_locale
+
   layout "app_full"
 
   def set_locale
@@ -34,4 +35,5 @@ class ApplicationController < ActionController::Base
   def user_not_authorized
     redirect_to(request.referrer || root_path)
   end
+
 end

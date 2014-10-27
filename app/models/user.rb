@@ -46,6 +46,7 @@
 
 class User < ActiveRecord::Base
   acts_as_paranoid
+  acts_as_messageable
   validates_as_paranoid
 
   mount_uploader :picture, AvatarUploader
@@ -85,6 +86,10 @@ class User < ActiveRecord::Base
     new_record?
   end
 
+  def mailboxer_email(object)
+    email
+  end
+
   def full_name
     "#{first_name} #{last_name}"
   end
@@ -102,8 +107,11 @@ class User < ActiveRecord::Base
     city? && country?
   end
 
+  def has_gps_location?
+    latitude? && longitude?
+  end
+
   def self.professions
     ["entrepreneur", "designer", "developper"]
   end
-
 end

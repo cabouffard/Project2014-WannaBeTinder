@@ -47,7 +47,11 @@ en:
     title_password: "Change your password"
 
   search:
+    title: "PICK PLEASE !!!"
     change_category: "I am looking for a different profession"
     wrong_location: "These people are not from my location"
     next: "Not interested"
     contact: "Contact this person"
+    no_results: "We are sorry, there is currently no profiles for the profession %{profession}"
+    looking_for: "I am looking for"
+    other_options: "Nah, I want to do the following"

@@ -47,7 +47,11 @@ fr:
     title_password: "Changement de mot de passe"
 
   search:
+    title: "MAN, CHOISIS !!!"
     change_category: "Je recherche une différente profession"
     wrong_location: "Ces personnes ne sont pas dans ma location"
     next: "Pas intéressé"
     contact: "Contacter cette personne"
+    no_results: "Nous sommes désolés, il n'y a actuellement pas de profils pour la profession %{profession}"
+    looking_for: "Je recherche..."
+    other_options: "Fuck off.. je veux faire..."
