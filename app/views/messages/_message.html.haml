@@ -1,0 +1,9 @@
+%li.media.comment
+  = comment.user.name
+  .media-body
+    %h4.media-heading
+      = link_to comment.user.name, comment.user.profile_url, target: '_blank'
+      says
+      %small.text-muted
+        [at #{comment.created_at.strftime('%-d %B %Y, %H:%M:%S')}]
+    %p= comment.body

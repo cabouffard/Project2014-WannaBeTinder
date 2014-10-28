@@ -55,6 +55,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :async, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :user_conversations
+  has_many :conversations, through: :user_conversations
+  has_many :messages, through: :conversations
+
   # Basic information
   validates :first_name, :last_name,
             presence: true, length: { maximum: 60 }

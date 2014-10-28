@@ -16,4 +16,5 @@
     %h2= t("search.other_options")
     = link_to t("navbar.user.account_settings"), edit_user_registration_path, class: 'btn btn-primary btn-block text-center'
     = link_to "Clear denied list", user_clear_list_path(current_user), remote: true, method: :patch, class: 'btn btn-primary btn-block text-center'
+    = link_to "Chats", conversations_path, class: 'btn btn-primary btn-block text-center'
 %hr/

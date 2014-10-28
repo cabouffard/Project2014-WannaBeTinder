@@ -101,7 +101,7 @@ gem 'haml-rails'
 gem "premailer-rails"
 
 # Subscription / Publisher server
-gem 'faye'
+gem 'faye-rails', '~> 2.0'
 gem 'thin'
 
 group :development do

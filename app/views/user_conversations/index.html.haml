@@ -1,0 +1,7 @@
+%h1
+  = current_user.name
+%ul
+  - for conversation in @conversations do
+    %li{:class => conversation.read? ? 'read' : 'unread'}= link_to "Conversation", user_conversation_path(conversation.user, conversation)
+
+#{link_to "Create a New Conversation", new_conversation_path()}

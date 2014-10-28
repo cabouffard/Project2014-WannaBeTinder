@@ -1,0 +1,13 @@
+%h1= "Conversation"
+%div
+  %h2 People in this conversation:
+  %ul
+    %li= @user.full_name
+- for message in @conversation.messages do
+  .message
+    = time_ago_in_words(message.created_at)
+    ago, #{message.user.name} wrote:
+    .message_body= message.body
+- if current_user == @conversation.user && !@conversation.read?
+  = link_to "Mark as read", mark_as_read_conversation_path(@conversation), :method => :post
+%br/

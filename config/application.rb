@@ -1,7 +1,6 @@
 require File.expand_path("../boot", __FILE__)
 
 require "rails/all"
-require "net/http"
 
 # Require the gems listed in Gemfile, including any gems
 # you"ve limited to :test, :development, or :production.
@@ -58,6 +57,9 @@ module Projet
     config.assets.version = "1.0"
 
     config.i18n.enforce_available_locales = false
+
+    config.middleware.delete Rack::Lock
+    config.middleware.use FayeRails::Middleware, mount: '/faye', :timeout => 25
 
     # Devise controller layouts
     config.to_prepare do

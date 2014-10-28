@@ -15,5 +15,6 @@
 //= require nprogress
 //= require nprogress-turbolinks
 //= require bootstrap
+//= require faye
 //= require_tree ./modules
 

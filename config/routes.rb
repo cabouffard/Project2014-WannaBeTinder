@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   end
 
   resources :user do
+    resources :conversations, :controller => "user_conversations"
     patch "deny_profile", to: "user#update_denied_profiles"
     patch "notify", to: "user#notify_user"
     patch "clear_list", to: "user#clear_denied_profiles"
@@ -31,20 +32,10 @@ Rails.application.routes.draw do
   get 'search', to: 'search#index'
   post 'evaluate_location', to: 'location#evaluate_location'
 
-  resources :messages do
+  resources :conversations, controller: :user_conversations do
+    resources :messages
     member do
-      post :new
-    end
-  end
-  resources :conversations do
-    member do
-      post :reply
-      post :trash
-      post :untrash
-    end
-    collection do
-      get :trashbin
-      post :empty_trash
+      post :mark_as_read
     end
   end
 

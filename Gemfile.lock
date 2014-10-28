@@ -145,6 +145,9 @@ GEM
       multi_json (>= 1.0.0)
       rack (>= 1.0.0)
       websocket-driver (>= 0.3.0)
+    faye-rails (2.0.0)
+      eventmachine (~> 1.0.0)
+      faye (~> 1.0.1)
     faye-websocket (0.7.5)
       eventmachine (>= 0.12.0)
       websocket-driver (>= 0.3.5)
@@ -355,7 +358,7 @@ DEPENDENCIES
   devise-i18n
   factory_girl
   faker
-  faye
+  faye-rails (~> 2.0)
   fog
   font-awesome-rails
   foreman (~> 0.66.0)
