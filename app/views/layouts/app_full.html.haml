@@ -4,6 +4,7 @@
   %body{"data-env" => Rails.env}
     = render "layouts/analytics" if Rails.env == "production"
     %header.app-nav= render "layouts/app_nav"
+    = render "layouts/notification"
     .app-container
       .app-main
         .app-flash

@@ -23,12 +23,12 @@ Rails.application.routes.draw do
 
   resources :user do
     patch "deny_profile", to: "user#update_denied_profiles"
+    patch "notify", to: "user#notify_user"
     patch "clear_list", to: "user#clear_denied_profiles"
   end
 
   # Search
   get 'search', to: 'search#index'
-
   post 'evaluate_location', to: 'location#evaluate_location'
 
   resources :messages do
@@ -85,10 +85,5 @@ Rails.application.routes.draw do
         path: "account/password",
         controller: "account/passwords",
         as: :account_password
-
-    # # Authentification
-    # get     "sign-in"   => "devise/sessions#new",     as: :new_user_session
-    # post    "sign-in"   => "devise/sessions#create",  as: :user_session
-    # delete  "sign-out"  => "devise/sessions#destroy", as: :destroy_user_session
   end
 end

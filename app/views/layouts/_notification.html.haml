@@ -1,0 +1,14 @@
+:javascript
+  $(function() {
+    window.faye.subscribe("/notifications/#{current_user.id}", function(data) {
+      $("#notification").children(".js-data").text(data);
+      $("#notification").fadeIn("slow");
+      $(".dismiss").click(function(){
+        $("#notification").fadeOut("slow");
+      });
+    });
+  });
+#notification{style: "display: none;"}
+  %span.js-data
+  %span.dismiss
+    %a{title: "dismiss this notification"} X

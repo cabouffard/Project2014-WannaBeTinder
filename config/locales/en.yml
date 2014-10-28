@@ -46,6 +46,9 @@ en:
     title_position: "About your position"
     title_password: "Change your password"
 
+  notification:
+    private_notification: "%{user} wants to get in contact with you!"
+
   search:
     title: "PICK PLEASE !!!"
     change_category: "I am looking for a different profession"

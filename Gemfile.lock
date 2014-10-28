@@ -94,6 +94,7 @@ GEM
     coffee-script-source (1.8.0)
     columnize (0.8.9)
     connection_pool (2.0.0)
+    cookiejar (0.3.2)
     countries (0.9.3)
       currencies (~> 0.4.2)
     country_select (2.1.0)
@@ -101,6 +102,7 @@ GEM
     css_parser (1.3.5)
       addressable
     currencies (0.4.2)
+    daemons (1.1.9)
     debug_inspector (0.0.2)
     debugger (1.6.8)
       columnize (>= 0.3.1)
@@ -119,13 +121,33 @@ GEM
       devise (~> 3.2)
     devise-i18n (0.11.2)
     dotenv (0.7.0)
+    em-http-request (1.1.2)
+      addressable (>= 2.3.4)
+      cookiejar
+      em-socksify (>= 0.3)
+      eventmachine (>= 1.0.3)
+      http_parser.rb (>= 0.6.0)
+    em-socksify (0.3.0)
+      eventmachine (>= 1.0.0.beta.4)
     erubis (2.7.0)
+    eventmachine (1.0.3)
     excon (0.40.0)
     execjs (2.2.2)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
     faker (1.4.3)
       i18n (~> 0.5)
+    faye (1.0.3)
+      cookiejar (>= 0.3.0)
+      em-http-request (>= 0.3.0)
+      eventmachine (>= 0.12.0)
+      faye-websocket (>= 0.7.0)
+      multi_json (>= 1.0.0)
+      rack (>= 1.0.0)
+      websocket-driver (>= 0.3.0)
+    faye-websocket (0.7.5)
+      eventmachine (>= 0.12.0)
+      websocket-driver (>= 0.3.5)
     fog (1.24.0)
       fog-brightbox
       fog-core (~> 1.23)
@@ -163,8 +185,6 @@ GEM
       nokogiri (~> 1.5, >= 1.5.11)
     font-awesome-rails (4.2.0.0)
       railties (>= 3.2, < 5.0)
-    foreigner (1.6.1)
-      activerecord (>= 3.0.0)
     foreman (0.66.0)
       dotenv (~> 0.7.0)
       thor (~> 0.19.1)
@@ -179,7 +199,10 @@ GEM
       railties (>= 4.0.1)
     hike (1.2.3)
     htmlentities (4.3.2)
+    http_parser.rb (0.6.0)
     i18n (0.6.11)
+    i18n-js (2.1.2)
+      i18n
     inflecto (0.0.2)
     ipaddress (0.8.0)
     jquery-rails (3.1.2)
@@ -195,10 +218,6 @@ GEM
     libv8 (3.16.14.7)
     mail (2.6.1)
       mime-types (>= 1.16, < 3)
-    mailboxer (0.12.4)
-      carrierwave (>= 0.5.8)
-      foreigner (>= 0.9.1)
-      rails (>= 3.2.0)
     meta_request (0.3.4)
       callsite (~> 0.0, >= 0.0.11)
       rack-contrib (~> 1.1)
@@ -292,6 +311,10 @@ GEM
     therubyracer (0.12.1)
       libv8 (~> 3.16.14.0)
       ref
+    thin (1.6.2)
+      daemons (>= 1.0.9)
+      eventmachine (>= 1.0.0)
+      rack (>= 1.0.0)
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
@@ -308,6 +331,7 @@ GEM
       json (>= 1.8.0)
     warden (1.2.3)
       rack (>= 1.0)
+    websocket-driver (0.3.5)
 
 PLATFORMS
   ruby
@@ -331,15 +355,16 @@ DEPENDENCIES
   devise-i18n
   factory_girl
   faker
+  faye
   fog
   font-awesome-rails
   foreman (~> 0.66.0)
   geocoder
   haml-rails
+  i18n-js
   jquery-rails
   jquery-ui-rails
   letter_opener
-  mailboxer
   meta_request
   mini_magick
   nilify_blanks
@@ -357,6 +382,7 @@ DEPENDENCIES
   simple_form!
   sinatra (>= 1.3.0)
   therubyracer
+  thin
   turbo-sprockets-rails3
   turbolinks
   uglifier

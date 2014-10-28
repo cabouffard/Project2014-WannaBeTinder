@@ -46,7 +46,6 @@
 
 class User < ActiveRecord::Base
   acts_as_paranoid
-  acts_as_messageable
   validates_as_paranoid
 
   mount_uploader :picture, AvatarUploader

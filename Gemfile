@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'mailboxer'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
 # Use SCSS for stylesheets
@@ -27,6 +25,9 @@ gem "bourbon"
 
 # I18n for default messages
 gem 'rails-i18n'
+
+# I18N for JS
+gem "i18n-js"
 
 # Authentication
 gem "devise"
@@ -98,6 +99,10 @@ gem 'haml-rails'
 
 # HTML emails
 gem "premailer-rails"
+
+# Subscription / Publisher server
+gem 'faye'
+gem 'thin'
 
 group :development do
   # Fake Datas

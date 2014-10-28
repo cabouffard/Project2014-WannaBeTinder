@@ -1,6 +1,6 @@
-%nav.navbar.navbar-default{:role => "navigation"}
+%nav.navbar.navbar-default{role: "navigation"}
   .navbar-header
-    %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+    %button.navbar-toggle{data: { target: ".navbar-collapse", toggle: "collapse" }, type: "button"}
       %span.sr-only Navigation
       %span.icon-bar
       %span.icon-bar
@@ -14,15 +14,11 @@
     - else
       %ul.nav.navbar-nav.navbar-right
         %li.dropdown
-          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+          %a.dropdown-toggle{data: { toggle: "dropdown" }, href: "#"}
             %span.app-nav-user
               = current_user.name
             %b.caret
           %ul.dropdown-menu
-            - if current_user.admin
-              %li
-                = link_to t("navbar.user.admin_settings"), '#'
-            %li.divider
             %li
               = link_to t("navbar.user.account_settings"), edit_user_registration_path
             %li.divider

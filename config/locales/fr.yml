@@ -46,6 +46,9 @@ fr:
     title_position: "Information sur la position"
     title_password: "Changement de mot de passe"
 
+  notification:
+    private_notification: "%{user} désire entrer en contact avec vous!"
+
   search:
     title: "MAN, CHOISIS !!!"
     change_category: "Je recherche une différente profession"
