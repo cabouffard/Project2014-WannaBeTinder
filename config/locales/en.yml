@@ -59,5 +59,17 @@ en:
     looking_for: "I am looking for"
     other_options: "Nah, I want to do the following"
 
+  distance:
+    centi:
+      one: "centimeter"
+      other: "centimeters"
+    unit:
+      one: "meter"
+      other: "meters"
+    thousand:
+      one: "kilometer"
+      other: "kilometers"
+    billion: "gazillion-distance"
+
   mailer:
     footer: "TODO: ADD FOOTER"

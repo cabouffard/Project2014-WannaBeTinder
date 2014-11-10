@@ -21,8 +21,7 @@
         %td= user.country
       %tr
         %td= t("fields.distance")
-        -# Regarde : NUMBER_TO_HUMAN de rails
-        %td= "Approx. : #{current_user.distance_to([user.latitude, user.longitude], :km) * 1000} meters" if user.has_gps_location? && current_user.has_gps_location?
+        %td= "Approx. : #{number_to_human(current_user.distance_to([user.latitude, user.longitude]) * 1000, units: :distance, precision: 1)}" if user.has_gps_location? && current_user.has_gps_location?
 .row
   = link_to t("search.next"), user_deny_profile_url(user, user: { profession: user.profession }), remote: true, method: :patch, class: 'btn btn-lg btn-danger text-center'
   = link_to t("search.contact"), user_notify_url(user, user: { profession: user.profession }), remote: true, method: :patch, class: 'btn btn-lg btn-success text-center'

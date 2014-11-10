@@ -59,5 +59,17 @@ fr:
     looking_for: "Je recherche..."
     other_options: "Fuck off.. je veux faire..."
 
+  distance:
+    centi:
+      one: "centimètre"
+      other: "centimètres"
+    unit:
+      one: "mètre"
+      other: "mètres"
+    thousand:
+      one: "kilomètre"
+      other: "kilomètres"
+    billion: "gazillion-distance"
+
   mailer:
     footer: "TODO: AJOUTE FOOTER"
