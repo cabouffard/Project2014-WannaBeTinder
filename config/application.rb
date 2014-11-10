@@ -1,4 +1,4 @@
-require File.expand_path("../boot", __FILE__)
+require File.expand_path('../csrf_protection', __FILE__)
 
 require "rails/all"
 
@@ -60,6 +60,7 @@ module Projet
 
     config.middleware.delete Rack::Lock
     config.middleware.use FayeRails::Middleware, mount: '/faye', :timeout => 25
+    # config.middleware.use FayeRails::Middleware, extensions: [CsrfProtection.new], mount: '/faye', :timeout => 25
 
     # Devise controller layouts
     config.to_prepare do
@@ -68,6 +69,7 @@ module Projet
       Devise::ConfirmationsController.layout "app_small"
       Devise::UnlocksController.layout "app_small"
       Devise::PasswordsController.layout "app_small"
+      Devise::Mailer.layout "mailer"
     end
   end
 end

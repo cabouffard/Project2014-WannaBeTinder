@@ -58,3 +58,6 @@ en:
     no_results: "We are sorry, there is currently no profiles for the profession %{profession}"
     looking_for: "I am looking for"
     other_options: "Nah, I want to do the following"
+
+  mailer:
+    footer: "TODO: ADD FOOTER"

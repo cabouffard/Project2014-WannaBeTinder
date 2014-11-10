@@ -58,3 +58,6 @@ fr:
     no_results: "Nous sommes désolés, il n'y a actuellement pas de profils pour la profession %{profession}"
     looking_for: "Je recherche..."
     other_options: "Fuck off.. je veux faire..."
+
+  mailer:
+    footer: "TODO: AJOUTE FOOTER"

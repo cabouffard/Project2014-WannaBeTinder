@@ -371,6 +371,7 @@ DEPENDENCIES
   meta_request
   mini_magick
   nilify_blanks
+  nokogiri
   nprogress-rails
   pg (~> 0.14.1)
   pg_search!

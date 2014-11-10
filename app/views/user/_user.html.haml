@@ -25,4 +25,4 @@
         %td= "Approx. : #{current_user.distance_to([user.latitude, user.longitude], :km) * 1000} meters" if user.has_gps_location? && current_user.has_gps_location?
 .row
   = link_to t("search.next"), user_deny_profile_url(user, user: { profession: user.profession }), remote: true, method: :patch, class: 'btn btn-lg btn-danger text-center'
-  = link_to t("search.contact"), user_notify_url(user), remote: true, method: :patch, class: 'btn btn-lg btn-success text-center'
+  = link_to t("search.contact"), user_notify_url(user, user: { profession: user.profession }), remote: true, method: :patch, class: 'btn btn-lg btn-success text-center'

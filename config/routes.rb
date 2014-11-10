@@ -22,10 +22,12 @@ Rails.application.routes.draw do
   end
 
   resources :user do
-    resources :conversations, :controller => "user_conversations"
+    resources :conversations, controller: :user_conversations
+    resources :messages, :controller => "messages"
     patch "deny_profile", to: "user#update_denied_profiles"
     patch "notify", to: "user#notify_user"
-    patch "clear_list", to: "user#clear_denied_profiles"
+    patch "clear_denied_list", to: "user#clear_denied_profiles"
+    patch "clear_contacted_list", to: "user#clear_contacted_profiles"
   end
 
   # Search

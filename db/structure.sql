@@ -315,7 +315,8 @@ CREATE TABLE users (
     deleted_at timestamp without time zone,
     latitude double precision,
     longitude double precision,
-    denied_users character varying(255)[] DEFAULT '{}'::character varying[]
+    denied_users character varying(255)[] DEFAULT '{}'::character varying[],
+    contacted_users character varying(255)[] DEFAULT '{}'::character varying[]
 );
 
 
@@ -631,4 +632,6 @@ INSERT INTO schema_migrations (version) VALUES ('20141028031517');
 INSERT INTO schema_migrations (version) VALUES ('20141028033206');
 
 INSERT INTO schema_migrations (version) VALUES ('20141028033455');
+
+INSERT INTO schema_migrations (version) VALUES ('20141110190116');
 

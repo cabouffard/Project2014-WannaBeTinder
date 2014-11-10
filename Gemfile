@@ -99,6 +99,7 @@ gem 'haml-rails'
 
 # HTML emails
 gem "premailer-rails"
+gem "nokogiri"
 
 # Subscription / Publisher server
 gem 'faye-rails', '~> 2.0'

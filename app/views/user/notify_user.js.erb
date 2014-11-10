@@ -1,7 +1,13 @@
 $(function() {
-  publisher = faye.publish('/notifications/<%= @user.id %>', {
+  console.log("<%= @user.id %>");
+  <% if @user.nil? %>
+    $(".js-profile-sheet").html('<%= escape_javascript(render('user/no_profile')) %>');
+  <% else %>
+    $(".js-profile-sheet").html('<%= escape_javascript(render('user/user', user: @user)) %>');
+  <% end %>
+  publisher = faye.publish('/notifications/<%= @to.id %>', {
     message: '<%= t("notification.private_notification", user: current_user.name,
-                                                        locale: @user.locale) %>'
+                                                        locale: @to.locale) %>'
   });
 });
 
