@@ -22,6 +22,11 @@ class UserController < ApplicationController
 
   def notify_user
     @user = User.find(params[:user_id])
+    @conversation = current_user.user_conversations.build
+    @conversation.build_conversation
+    @conversation.to = @user
+    @conversation.save!
+
   end
 
   private

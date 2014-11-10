@@ -1,7 +1,15 @@
-%h1
-  = current_user.name
 %ul
-  - for conversation in @conversations do
-    %li{:class => conversation.read? ? 'read' : 'unread'}= link_to "Conversation", user_conversation_path(conversation.user, conversation)
-
-#{link_to "Create a New Conversation", new_conversation_path()}
+  - @conversations.in_groups_of(4, false) do |conversations|
+    .row
+    - conversations.each do |conversation|
+      - conversation.set_recipient(current_user)
+      .col-sm-3
+        .row
+          .avatar= image_tag(conversation.to.picture? ? conversation.to.picture_url(:thumb) : "blank-avatar.png", alt: "Avatar", class: "conversation.to.avatar conversation.to.#{conversation.to.profession}-avatar img-thumbnail")
+        .row
+          .name= conversation.to.name
+          - if conversation.read?
+            .status= "ALL MESSAGES HAS BEEN READ"
+          - else
+            .status= "YOU HAVE MESSAGES LEFT TO READ!"
+          .link= link_to "read", user_conversation_path(conversation.user, conversation)

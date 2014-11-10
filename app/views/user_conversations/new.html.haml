@@ -1,17 +1,1 @@
-%h1 New Conversation
-= form_for(@conversation) do |f|
-  %div
-    = f.label :to
-    %br/
-    - for user in User.all do
-      - next if user == current_user
-      = check_box_tag "user_conversation[to][]", user.id
-      = user.name
-      %br/
-  = f.fields_for :conversation do |c|
-    = c.fields_for :messages do |m|
-      %div
-        = m.label :body
-        %br/
-        = m.text_area :body
-  = f.submit
+- to delete

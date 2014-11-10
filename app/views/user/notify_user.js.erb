@@ -1,9 +1,8 @@
 $(function() {
-  <% broadcast "/notifications/#{@user.id}" do %>
-    <%# TODO  Fix, this is working but it is fugly! %>
-    <%= t("notification.private_notification", user: current_user.name,
-                                                        locale: @user.locale) %>
-  <% end %>
+  publisher = faye.publish('/notifications/<%= @user.id %>', {
+    message: '<%= t("notification.private_notification", user: current_user.name,
+                                                        locale: @user.locale) %>'
+  });
 });
 
 

@@ -25,6 +25,21 @@ class UserConversation < ActiveRecord::Base
 
   delegate :users, to: :conversation
 
-  attr_accessor :to
   before_create :create_user_conversations
+
+  attr_accessor :to
+
+  def set_recipient(user)
+    @to = users.where.not(id: user.id).limit(1).first
+    if @to.nil?
+      @to = user
+    end
+  end
+
+private
+
+  def create_user_conversations
+    return if to.blank?
+    UserConversation.create user_id: to.id, conversation: conversation
+  end
 end

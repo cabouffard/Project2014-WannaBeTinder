@@ -1,17 +1,21 @@
-class MessageController < PublicController
+class MessagesController < ApplicationController
   def new
-    @comment = Message.new
-    @comments = Message.order("created_at DESC")
+    @messages = Message.order("created_at DESC")
   end
 
   def index
-    @comments = Message.order("created_at DESC")
+    @messages = Message.order("created_at DESC")
   end
 
   def create
       @message = Message.new
       @message.assign_attributes(message_params)
+      @message.conversation_id = 1
+      @message.user = current_user
+      @message.conversation.set_recipient(current_user)
 
+      @conversation = @message.conversation
+      @recipient = @message.conversation.to
       if @message.save
         flash.now[:success] = 'Your comment was successfully posted!'
       else

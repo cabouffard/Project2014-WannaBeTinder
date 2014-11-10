@@ -1,9 +1,9 @@
-%li.media.comment
-  = comment.user.name
+%li.media.message
+  = message.user.name
   .media-body
     %h4.media-heading
-      = link_to comment.user.name, comment.user.profile_url, target: '_blank'
+      = link_to message.user.name, target: '_blank'
       says
       %small.text-muted
-        [at #{comment.created_at.strftime('%-d %B %Y, %H:%M:%S')}]
-    %p= comment.body
+        [at #{message.created_at.strftime('%-d %B %Y, %H:%M:%S')}]
+    %p= message.body

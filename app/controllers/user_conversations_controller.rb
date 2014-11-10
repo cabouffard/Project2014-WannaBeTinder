@@ -5,7 +5,15 @@ class UserConversationsController < ApplicationController
 
   def show
     @conversation = UserConversation.find params[:id]
-    @user = @conversation.users.where.not(id: current_user.id).limit(1).first
+    @conversation.set_recipient(current_user)
+    @message = Message.new
+    @message.conversation = @conversation.conversation
+    @message.user = current_user
+  end
+
+  def update
+    @conversation.update_attributes(user_conversation_params)
+    @conversation.save!
   end
 
   def new
@@ -14,7 +22,7 @@ class UserConversationsController < ApplicationController
   end
 
   def create
-    @conversation = UserConversation.new params[:user_conversation]
+    @conversation = UserConversation.new(user_conversation_params)
     @conversation.user = current_user
     @conversation.conversation.messages.first.user = current_user
     @conversation.save!
@@ -32,4 +40,11 @@ class UserConversationsController < ApplicationController
     @conversation.update_attributes :read => false
     redirect_to user_conversation_path(current_user, @conversation)
   end
+
+  private
+
+  def user_conversation_params
+    params.require(:user_conversation).permit(:to, conversation_attributes: [:id, [messages_attributes: [:body, :id]]])
+  end
+
 end

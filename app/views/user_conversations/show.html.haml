@@ -1,13 +1,27 @@
+:javascript
+  $(function() {
+    faye.subscribe('/messages/#{current_user.id}', function(payload) {
+      $('.conversation').append(payload.message);
+      $('#new_comment').submit(function() {
+        return $(this).find(".btn[type='submit']").prop('disabled', true);
+      });
+    });
+  });
+
 %h1= "Conversation"
-%div
-  %h2 People in this conversation:
-  %ul
-    %li= @user.full_name
-- for message in @conversation.messages do
-  .message
-    = time_ago_in_words(message.created_at)
-    ago, #{message.user.name} wrote:
-    .message_body= message.body
-- if current_user == @conversation.user && !@conversation.read?
-  = link_to "Mark as read", mark_as_read_conversation_path(@conversation), :method => :post
+.row
+  .avatar= image_tag(@conversation.to.picture? ? @conversation.to.picture_url(:thumb) : "blank-avatar.png", alt: "Avatar", class: "@conversation.to.avatar @conversation.to.#{@conversation.to.profession}-avatar img-thumbnail")
+.row
+  .name= @conversation.to.name
+  .conversation
+  - for message in @conversation.messages do
+    = render ('messages/message'), message: message
+  -#   = time_ago_in_words(message.created_at)
+  -#   ago, #{message.user.name} wrote:
+  -# = link_to "Mark as read", mark_as_read_conversation_path(@conversation), :method => :post
+
+%h1= "Update Conversation"
 %br/
+= simple_form_for(@message, url: conversation_messages_path(@conversation, @message), remote: true) do |f|
+  = f.text_area :body
+  = f.button :button, "submit", class: "btn-primary"

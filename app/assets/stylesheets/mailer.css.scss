@@ -1,0 +1,193 @@
+@charset "UTF-8";
+
+// Vendor
+@import "bourbon";
+@import "theme/variables";
+
+/* -------------------------------------
+    GLOBAL
+------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-size: 100%;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+  width: 100%!important;
+  height: 100%;
+}
+
+
+/* -------------------------------------
+    ELEMENTS
+------------------------------------- */
+
+a {
+  color: $brand-primary;
+}
+
+.btn-primary {
+  text-decoration: none;
+  color: #fff;
+  background-color: $brand-primary;
+  border: solid $brand-primary;
+  border-width: 10px 20px;
+  line-height: 2;
+  font-weight: bold;
+  margin-right: 10px;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 25px;
+}
+
+.btn-secondary {
+  text-decoration: none;
+  color: #fff;
+  background-color: #aaa;
+  border: solid #aaa;
+  border-width: 10px 20px;
+  line-height: 2;
+  font-weight: bold;
+  margin-right: 10px;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 25px;
+}
+
+.last {
+  margin-bottom: 0;
+}
+
+.first {
+  margin-top: 0;
+}
+
+.padding {
+  padding: 10px 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* -------------------------------------
+    HEADER
+------------------------------------- */
+
+.header-wrap {
+  width: 100%;
+  padding-top: 20px;
+
+  img {
+    max-width: 500px;
+  }
+}
+
+/* -------------------------------------
+    BODY
+------------------------------------- */
+
+.body-wrap {
+  width: 100%;
+  padding: 20px;
+}
+
+.body-wrap .container {
+  padding: 40px;
+  border: 1px solid #eee;
+}
+
+/* -------------------------------------
+    FOOTER
+------------------------------------- */
+
+.footer-wrap {
+  width: 100%;
+  clear: both !important;
+}
+
+.footer-wrap .container p {
+  font-size: 12px;
+  color: #666;
+
+}
+
+.footer-wrap a {
+  color: #999;
+}
+
+/* -------------------------------------
+    TYPOGRAPHY
+------------------------------------- */
+
+h1, h2, h3 {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  margin-bottom: 15px;
+  color: #000;
+  line-height: 1.4em;
+  font-weight: 200;
+}
+
+h1, .h1 {
+  font-size: 32px;
+}
+
+h2, .h2 {
+  font-size: 24px;
+}
+
+h3, .h3 {
+  font-size: 20px;
+}
+
+p, ul, ol {
+  margin-bottom: 10px;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+ul li, ol li {
+  margin-left: 5px;
+  list-style-position: inside;
+}
+
+/* ---------------------------------------------------
+    RESPONSIVENESS
+    Nuke it from orbit. It's the only way to be sure.
+------------------------------------------------------ */
+
+/* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
+.container {
+  display: block !important;
+  max-width: 600px !important;
+  margin: 0 auto !important;
+  clear: both !important;
+}
+
+/* This should also be a block element, so that it will fill 100% of the .container */
+.content {
+  max-width: 600px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Let's make sure tables in the content area are 100% wide */
+.content table {
+  width: 100%;
+}
+
+
+
+
