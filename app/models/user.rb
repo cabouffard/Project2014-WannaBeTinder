@@ -80,7 +80,7 @@ class User < ActiveRecord::Base
     end
   end
   # after_validation :geocode         # auto-fetch coordinates
-  after_validation :reverse_geocode, if: :location_has_changed?
+  before_validation :reverse_geocode, if: :location_has_changed?
 
   # TODO: This has to be fixed
   # has_secure_password
@@ -96,10 +96,6 @@ class User < ActiveRecord::Base
     new_record?
   end
 
-  def mailboxer_email(object)
-    email
-  end
-
   def full_name
     "#{first_name} #{last_name}"
   end
@@ -111,10 +107,6 @@ class User < ActiveRecord::Base
 
   def address
     [street, city, state, country].compact.join(', ')
-  end
-
-  def has_location?
-    city? && country?
   end
 
   def has_gps_location?

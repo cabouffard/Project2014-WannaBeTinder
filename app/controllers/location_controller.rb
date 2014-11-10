@@ -6,8 +6,8 @@ class LocationController < ApplicationController
     @user.city = @location.city
     @user.state = @location.state
     @user.country = @location.country
-    @user.latitude = @location.longitude
-    @user.longitude = @location.latitude
+    @user.latitude = @location.latitude
+    @user.longitude = @location.longitude
   end
 
   private

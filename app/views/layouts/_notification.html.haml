@@ -1,12 +1,13 @@
 :javascript
   $(function() {
-    faye.subscribe("/notifications/#{current_user.id}", function(payload) {
-      $("#notification").children(".js-data").text(payload.message);
-      $("#notification").fadeIn("slow");
-      $(".dismiss").click(function(){
-        $("#notification").fadeOut("slow");
+    - if current_user.present?
+      faye.subscribe("/notifications/#{current_user.id}", function(payload) {
+        $("#notification").children(".js-data").text(payload.message);
+        $("#notification").fadeIn("slow");
+        $(".dismiss").click(function(){
+          $("#notification").fadeOut("slow");
+        });
       });
-    });
   });
 #notification{style: "display: none;"}
   %span.js-data
