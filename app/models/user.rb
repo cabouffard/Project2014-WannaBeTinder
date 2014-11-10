@@ -73,18 +73,24 @@ class User < ActiveRecord::Base
 
   reverse_geocoded_by :latitude, :longitude do |obj, results|
     if geo = results.first
+      obj.street  = geo.street_address
+      obj.state   = geo.state
       obj.city    = geo.city
-      obj.country = geo.country_code
+      obj.country = geo.country
     end
   end
   # after_validation :geocode         # auto-fetch coordinates
-  # after_validation :reverse_geocode
+  after_validation :reverse_geocode, if: :location_has_changed?
 
   # TODO: This has to be fixed
   # has_secure_password
   # def validate_password?
   #   validate_password || new_record?
   # end
+  #
+  def location_has_changed?
+    latitude_changed? || longitude_changed?
+  end
 
   def validate_password?
     new_record?

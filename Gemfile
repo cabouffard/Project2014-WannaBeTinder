@@ -107,7 +107,7 @@ gem 'thin'
 
 group :development do
   # Fake Datas
-  gem "factory_girl"
+  gem "factory_girl_rails"
   gem "faker"
 
   # Email in dev
