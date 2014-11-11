@@ -1,3 +1,4 @@
+ruby "2.1.4"
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -34,9 +35,6 @@ gem "devise"
 gem "devise-i18n"
 gem "devise-async"
 
-# Debugger
-gem 'debugger'
-
 # Document uploading
 gem "carrierwave"
 gem "fog"
@@ -46,7 +44,7 @@ gem "mini_magick"
 
 # Web server
 gem 'puma'
-gem 'foreman', '~> 0.66.0'
+gem 'foreman'
 
 # Background jobs
 gem 'sidekiq'
@@ -120,4 +118,8 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'meta_request'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
