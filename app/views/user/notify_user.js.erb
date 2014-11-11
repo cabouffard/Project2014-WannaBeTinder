@@ -1,5 +1,4 @@
 $(function() {
-  console.log("<%= @user.id %>");
   <% if @user.nil? %>
     $(".js-profile-sheet").html('<%= escape_javascript(render('user/no_profile')) %>');
   <% else %>

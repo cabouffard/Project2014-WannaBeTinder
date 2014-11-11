@@ -1,6 +1,6 @@
 :javascript
   $(function() {
-    faye.subscribe('/messages/#{current_user.id}', function(payload) {
+    faye.subscribe('/messages/#{@conversation.id}', function(payload) {
       $('.conversation').append(payload.message);
       $('#new_comment').submit(function() {
         return $(this).find(".btn[type='submit']").prop('disabled', true);
@@ -8,17 +8,14 @@
     });
   });
 
-%h1= "Conversation"
+%h1= "Conversation #{@conversation.id}"
 .row
   .avatar= image_tag(@conversation.to.picture? ? @conversation.to.picture_url(:thumb) : "blank-avatar.png", alt: "Avatar", class: "@conversation.to.avatar @conversation.to.#{@conversation.to.profession}-avatar img-thumbnail")
 .row
   .name= @conversation.to.name
   .conversation
-  - for message in @conversation.messages do
-    = render ('messages/message'), message: message
-  -#   = time_ago_in_words(message.created_at)
-  -#   ago, #{message.user.name} wrote:
-  -# = link_to "Mark as read", mark_as_read_conversation_path(@conversation), :method => :post
+    - for message in @conversation.messages do
+      = render ('messages/message'), message: message
 
 %h1= "Update Conversation"
 %br/

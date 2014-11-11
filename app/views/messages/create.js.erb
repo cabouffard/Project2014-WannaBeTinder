@@ -1,5 +1,5 @@
 $(function() {
-  publisher = faye.publish('/messages/<%= current_user.id %>', {
+  publisher = faye.publish('/messages/<%= @conversation.id %>', {
     message: '<%= escape_javascript(render("messages/message", message: @message)) %>',
     conversation: '<%= @conversation.id %>'
   });
