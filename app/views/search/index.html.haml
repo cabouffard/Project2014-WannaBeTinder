@@ -14,6 +14,6 @@
     = link_to t("navbar.user.account_settings"), edit_user_registration_path, class: 'btn btn-primary btn-block text-center'
     = link_to "Chats", conversations_path, class: 'btn btn-primary btn-block text-center'
     %h2= "DEBUG"
-    = link_to "Clear denied list", user_clear_denied_list_path(current_user), remote: true, method: :patch, class: 'btn btn-primary btn-block text-center'
-    = link_to "Clear contacted list", user_clear_contacted_list_path(current_user), remote: true, method: :patch, class: 'btn btn-primary btn-block text-center'
+    = link_to "Clear denied list", user_clear_denied_list_path(current_user), remote: true, method: :put, class: 'btn btn-primary btn-block text-center'
+    = link_to "Clear contacted list", user_clear_contacted_list_path(current_user), remote: true, method: :put, class: 'btn btn-primary btn-block text-center'
 %hr/
