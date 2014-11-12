@@ -18,6 +18,38 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       resources :user
+      devise_for :users, skip: [:registrations, :password, :confirmation]
+      devise_scope :user do
+        resource :registration,
+          only: [:new, :create, :edit, :update],
+          path: "account",
+          controller: "registrations",
+          as: :user_registration do
+            get :cancel
+          end
+
+        resource :password,
+          only: [:new, :create, :edit, :update],
+          path: "password",
+          controller: "devise/passwords",
+          path_names: {
+            new: "forgot",
+            edit: "reset",
+          },
+          as: :user_password
+
+          resource :confirmation,
+            only: [:show, :new, :create],
+            path: "account/confirmation",
+            controller: "devise/confirmations",
+            as: :user_confirmation
+
+          resource :password,
+            only: [:edit, :update],
+            path: "account/password",
+            controller: "account/passwords",
+            as: :account_password
+      end
     end
   end
 
