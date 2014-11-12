@@ -4,6 +4,8 @@ development:
   database: wanna
   pool: 5
   host: 127.0.0.1
+  username: postgres
+  password:
 
 production:
   adapter: postgresql
