@@ -174,7 +174,8 @@ CREATE TABLE users (
     latitude double precision,
     longitude double precision,
     denied_users character varying(255)[] DEFAULT '{}'::character varying[],
-    contacted_users character varying(255)[] DEFAULT '{}'::character varying[]
+    contacted_users character varying(255)[] DEFAULT '{}'::character varying[],
+    authentication_token character varying(255)
 );
 
 
@@ -286,6 +287,13 @@ CREATE INDEX index_user_conversations_on_user_id ON user_conversations USING btr
 
 
 --
+-- Name: index_users_on_authentication_token; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_users_on_authentication_token ON users USING btree (authentication_token);
+
+
+--
 -- Name: index_users_on_confirmation_token; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -346,4 +354,6 @@ INSERT INTO schema_migrations (version) VALUES ('20141028033206');
 INSERT INTO schema_migrations (version) VALUES ('20141028033455');
 
 INSERT INTO schema_migrations (version) VALUES ('20141110190116');
+
+INSERT INTO schema_migrations (version) VALUES ('20141111234159');
 

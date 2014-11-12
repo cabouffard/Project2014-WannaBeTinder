@@ -34,6 +34,7 @@ gem "i18n-js"
 gem "devise"
 gem "devise-i18n"
 gem "devise-async"
+gem 'simple_token_authentication'
 
 # Document uploading
 gem "carrierwave"

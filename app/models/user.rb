@@ -35,9 +35,11 @@
 #  longitude              :float
 #  denied_users           :string(255)      default([]), is an Array
 #  contacted_users        :string(255)      default([]), is an Array
+#  authentication_token   :string(255)
 #
 # Indexes
 #
+#  index_users_on_authentication_token    (authentication_token)
 #  index_users_on_confirmation_token      (confirmation_token) UNIQUE
 #  index_users_on_deleted_at              (deleted_at)
 #  index_users_on_email_and_deleted_at    (email,deleted_at) UNIQUE
@@ -46,6 +48,7 @@
 #
 
 class User < ActiveRecord::Base
+  acts_as_token_authenticatable
   acts_as_paranoid
   validates_as_paranoid
 
