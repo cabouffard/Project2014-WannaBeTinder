@@ -1,9 +1,10 @@
-%li.media.message
-  = message.user.name
-  .media-body
-    %h4.media-heading
-      = link_to message.user.name, target: '_blank'
-      says
-      %small.text-muted
-        [at #{message.created_at.strftime('%-d %B %Y, %H:%M:%S')}]
-    %p= message.body
+.msg-wrap
+  .media.msg
+    .pull-left
+      = small_user_avatar(message.user)
+    .media-body
+      %small.pull-right.time
+        = icon("fa fa-clock-o")
+        = message.created_at.strftime('%H:%M')
+      %h5.media-heading= message.user.name
+      %small.col-lg-10= message.body

@@ -17,6 +17,26 @@ en:
       sign_out: "Sign out"
       sign_in: "Sign in"
 
+  general:
+    add: "Add"
+    create: "Create"
+    create_and_continue: "Create and continue"
+    delete: "Delete"
+    edit: "Edit"
+    view: "View"
+    cancel: "Cancel"
+    close: "Close"
+    update: "Update"
+    back: "Back"
+    or: "or"
+    by: "By"
+    to: "to"
+    submit: "Submit"
+    continue: "Continue"
+    at: "At"
+    select_all: "Select all"
+    of: "Of"
+
   footer:
     copyright: "All rights reserved © %{date} Wannabe Tinder"
 
@@ -35,6 +55,9 @@ en:
       entrepreneur: "Entreprenneur"
       designer: "Designer"
       developper: "Developper"
+    profile:
+      details: "Details"
+      around: "Around"
 
   location:
     get_location: "Find my location automaticly"
@@ -50,14 +73,22 @@ en:
     private_notification: "%{user} wants to get in contact with you!"
 
   search:
-    title: "PICK PLEASE !!!"
-    change_category: "I am looking for a different profession"
-    wrong_location: "These people are not from my location"
-    next: "Not interested"
-    contact: "Contact this person"
-    no_results: "We are sorry, there is currently no profiles for the profession %{profession}"
-    looking_for: "I am looking for"
-    other_options: "Nah, I want to do the following"
+    index:
+      title: "PICK PLEASE !!!"
+      change_category: "I am looking for a different profession"
+      wrong_location: "These people are not from my location"
+      no_results: "We are sorry, there is currently no profiles for the profession %{profession}"
+      looking_for: "I am looking for"
+      other_options: "Nah, I want to do the following"
+    show:
+      next: "Not interested"
+      contact: "Contact this person"
+
+  conversation:
+    index:
+      title: "Conversations"
+    show:
+      title: "Chats"
 
   distance:
     centi:

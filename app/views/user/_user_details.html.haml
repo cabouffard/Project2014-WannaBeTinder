@@ -1,0 +1,19 @@
+.row
+  %strong= t("users.profile.details")
+  %table.table.table-bordered
+    %body
+      %tr
+        %td.col-md-6= t("fields.profession")
+        %td.col-md-6= profession_type_to_text(user.profession)
+      %tr
+        %td= t("fields.city")
+        %td= user.city
+      %tr
+        %td= t("fields.state")
+        %td= user.state
+      %tr
+        %td= t("fields.country")
+        %td= user.country
+      %tr
+        %td= t("fields.distance")
+        %td= "#{t("users.profile.around")} #{number_to_human(current_user.distance_to([user.latitude, user.longitude]) * 1000, units: :distance, precision: 1)}" if user.has_gps_location? && current_user.has_gps_location?

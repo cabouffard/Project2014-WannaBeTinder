@@ -13,7 +13,7 @@ class SearchController < ApplicationController
             .where().not(id: current_user.id).limit(1).first
       end
       if @user.nil?
-        flash.now[:warning] = t("search.no_results", profession: view_context.profession_type_to_text(params[:profession]))
+        flash.now[:warning] = t("search.index.no_results", profession: view_context.profession_type_to_text(params[:profession]))
       end
     end
 

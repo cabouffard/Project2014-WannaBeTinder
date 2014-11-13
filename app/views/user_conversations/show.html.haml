@@ -1,3 +1,9 @@
+%h1= t("conversation.show.title")
+%hr
+
+= render ("user/user_avatar"), user: @conversation.to
+= render ("conversation"), conversation: @conversation
+
 :javascript
   $(function() {
     faye.subscribe('/messages/#{@conversation.id}', function(payload) {
@@ -7,18 +13,3 @@
       });
     });
   });
-
-%h1= "Conversation #{@conversation.id}"
-.row
-  .avatar= image_tag(@conversation.to.picture? ? @conversation.to.picture_url(:thumb) : "blank-avatar.png", alt: "Avatar", class: "@conversation.to.avatar @conversation.to.#{@conversation.to.profession}-avatar img-thumbnail")
-.row
-  .name= @conversation.to.name
-  .conversation
-    - for message in @conversation.messages do
-      = render ('messages/message'), message: message
-
-%h1= "Update Conversation"
-%br/
-= simple_form_for(@message, url: conversation_messages_path(@conversation, @message), remote: true) do |f|
-  = f.text_area :body
-  = f.button :button, "submit", class: "btn-primary"

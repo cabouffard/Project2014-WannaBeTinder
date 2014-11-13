@@ -17,6 +17,26 @@ fr:
       sign_in: "Se connecter"
       sign_out: "Se déconnecter"
 
+  general:
+    add: "Ajouter"
+    create: "Créer"
+    create_and_continue: "Créer et continuer"
+    delete: "Supprimer"
+    edit: "Modifier"
+    view: "Voir"
+    cancel: "Annuler"
+    close: "Fermer"
+    update: "Modifier"
+    back: "Retour"
+    or: "ou"
+    by: "Par"
+    to: "au"
+    submit: "Envoyer"
+    continue: "Poursuivre"
+    at: "Chez"
+    select_all: "Sélectionner tout"
+    of: "De"
+
   footer:
     copyright: "Tous droits réservés © %{date} Wannabe Tinder"
 
@@ -35,6 +55,9 @@ fr:
       entrepreneur: "Entreprenneur"
       designer: "Designer"
       developper: "Developpeur"
+    profile:
+      details: "Détailes"
+      around: "Environ"
 
   location:
     get_location: "Trouver ma location automatiquement"
@@ -50,14 +73,22 @@ fr:
     private_notification: "%{user} désire entrer en contact avec vous!"
 
   search:
-    title: "MAN, CHOISIS !!!"
-    change_category: "Je recherche une différente profession"
-    wrong_location: "Ces personnes ne sont pas dans ma location"
-    next: "Pas intéressé"
-    contact: "Contacter cette personne"
-    no_results: "Nous sommes désolés, il n'y a actuellement pas de profils pour la profession %{profession}"
-    looking_for: "Je recherche..."
-    other_options: "Fuck off.. je veux faire..."
+    index:
+      title: "MAN, CHOISIS !!!"
+      change_category: "Je recherche une différente profession"
+      wrong_location: "Ces personnes ne sont pas dans ma location"
+      no_results: "Nous sommes désolés, il n'y a actuellement pas de profils pour la profession %{profession}"
+      looking_for: "Je recherche..."
+      other_options: "Fuck off.. je veux faire..."
+    show:
+      next: "Pas intéressé"
+      contact: "Contacter cette personne"
+
+  conversation:
+    index:
+      title: "Conversations fr"
+    show:
+      title: "Chats fr"
 
   distance:
     centi:

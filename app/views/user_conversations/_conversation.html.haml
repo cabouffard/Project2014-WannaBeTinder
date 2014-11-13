@@ -1,0 +1,7 @@
+.message-wrap.col-lg-12
+  - for message in conversation.messages do
+    = render ('messages/message'), message: message
+  = simple_form_for(@message, url: conversation_messages_path(@conversation, @message), remote: true) do |f|
+    .send-wrap
+      = f.text_area :body, class: "form-control send-message", rows: 3, placeholder: t("fields.body")
+      .pull-right= f.button :button, t("general.submit"), class: "btn btn-primary"

@@ -1,4 +1,4 @@
-%h1= t("search.title")
+%h1= t("search.index.title")
 %hr/
 .row
   - if @user.present?
@@ -6,11 +6,11 @@
       .user-details{ class: "js-profile-sheet" }
         = render("user/user", user: @user)
   - else
-    %h2= t("search.looking_for")
+    %h2= t("search.index.looking_for")
     = simple_form_for :search, url: search_url, method: :get do |f|
       - @professions.each do |profession|
         = f.button :button, profession_type_to_text(profession), value: profession, name: "profession", class: "btn-primary btn-block text-center"
-    %h2= t("search.other_options")
+    %h2= t("search.index.other_options")
     = link_to t("navbar.user.account_settings"), edit_user_registration_path, class: 'btn btn-primary btn-block text-center'
     = link_to "Chats", conversations_path, class: 'btn btn-primary btn-block text-center'
     %h2= "DEBUG"
