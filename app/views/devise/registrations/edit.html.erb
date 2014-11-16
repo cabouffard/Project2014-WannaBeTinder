@@ -14,7 +14,7 @@
 
   <%= f.input :picture, as: :file %>
   <%= f.input :picture_cache, as: :hidden %>
-  <%= image_tag(resource.picture_url(:thumb), class: 'img-thumbnail') if resource.picture? %>
+  <%= image_tag(resource.picture_url(:default), class: 'img-thumbnail') if resource.picture? %>
   <div>
     <%= f.button :button, t("devise.registrations.edit.submit"), class: "btn-primary" %>
     <btn class="btn btn-danger js-trigger-find-location" data-evaluate-location-path="<%= evaluate_location_url %>">

@@ -10,12 +10,13 @@ class MessagesController < ApplicationController
   def create
       @message = Message.new
       @message.assign_attributes(message_params)
-      @message.conversation_id = 1
+      @message.conversation_id = params[:conversation_id]
       @message.user = current_user
       @message.conversation.set_recipient(current_user)
 
       @conversation = @message.conversation
       @recipient = @message.conversation.to
+      puts @message
       if @message.save
         flash.now[:success] = 'Your comment was successfully posted!'
       else

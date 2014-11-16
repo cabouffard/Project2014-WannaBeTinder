@@ -7,7 +7,7 @@
 :javascript
   $(function() {
     faye.subscribe('/messages/#{@conversation.id}', function(payload) {
-      $('.conversation').append(payload.message);
+      $('.js-messages').append(payload.message);
       $('#new_comment').submit(function() {
         return $(this).find(".btn[type='submit']").prop('disabled', true);
       });

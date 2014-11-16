@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+@import "shared";
+
+// Scaffolding
+// -------------------------
+
+body {
+  padding: 40px 0;
+  // TODO: This might cause error on productin
+  background: $black url('bg.jpg') center fixed;
+  // background: $black image_url('bg.jpg') center fixed;
+  background-size: cover;
+
+  @media (min-width: $screen-tablet) {
+    padding: 80px 0;
+  }
+}
+
+// Splash content
+// -------------------------
+
+.splash {
+  max-width: 800px;
+  margin: 40px auto;
+  color: $white;
+  text-align: center;
+
+  h1 {
+    color: inherit;
+    font-size: 55px;
+    font-weight: 500;
+  }
+
+  h2 {
+    color: inherit;
+    font-size: 40px;
+    font-weight: 300;
+  }
+
+  p {
+    font-size: 22px;
+    line-height: 1.5em;
+  }
+
+  @media (min-width: $screen-tablet) {
+    margin-top: 120px;
+    margin-bottom: 120px;
+  }
+}
+
+// Navbar
+// -------------------------
+
+.navbar {
+  background: transparent;
+  border: 0;
+
+  .navbar-nav > li {
+    padding: 5px 20px;
+
+    > a {
+      padding: 0;
+      color: $white;
+      font-size: 18px;
+      text-align: center;
+
+      &:hover {
+        background: none;
+        color: darken($white, 20%);
+      }
+    }
+  }
+
+  .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+    padding-bottom: 2px;
+    background: none;
+    color: $white;
+
+    @media (min-width: $screen-tablet) {
+      border-bottom: 2px solid $white;
+    }
+  }
+}
+
+.navbar-nav.navbar-right {
+  margin-top: 20px;
+}
+
+.navbar-brand {
+  display: block;
+  float: none;
+  width: 100%;
+  text-align: center;
+
+  img {
+    display: inline-block;
+    margin: auto;
+    width: 250px;
+  }
+}

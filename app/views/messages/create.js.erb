@@ -3,12 +3,9 @@ $(function() {
     message: '<%= escape_javascript(render("messages/message", message: @message)) %>',
     conversation: '<%= @conversation.id %>'
   });
+
   publisher.callback(function() {
     $('#message_body').val('');
     $('#new_message').find(".btn[type='submit']").prop('disabled', false)
-  });
-
-  publisher.errback(function() {
-    alert('There was an error while posting your comment.');
   });
 });

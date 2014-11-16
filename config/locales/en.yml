@@ -83,6 +83,9 @@ en:
     show:
       next: "Not interested"
       contact: "Contact this person"
+      no_result: "Sorry, there are no more profile for your search, please try again in a few days!"
+      back_to_search: "Back to search"
+
 
   conversation:
     index:

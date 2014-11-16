@@ -12,8 +12,8 @@
         = f.button :button, profession_type_to_text(profession), value: profession, name: "profession", class: "btn-primary btn-block text-center"
     %h2= t("search.index.other_options")
     = link_to t("navbar.user.account_settings"), edit_user_registration_path, class: 'btn btn-primary btn-block text-center'
-    = link_to "Chats", conversations_path, class: 'btn btn-primary btn-block text-center'
-    %h2= "DEBUG"
+    = link_to t("conversation.index.title"), conversations_path, class: 'btn btn-primary btn-block text-center'
+    %h2= "DEBUG (to be removed)"
     = link_to "Clear denied list", user_clear_denied_list_path(current_user), remote: true, method: :put, class: 'btn btn-primary btn-block text-center'
     = link_to "Clear contacted list", user_clear_contacted_list_path(current_user), remote: true, method: :put, class: 'btn btn-primary btn-block text-center'
 %hr/

@@ -1,15 +1,4 @@
 .row
-  = image_tag("blank-avatar.png", alt: "Avatar", class: "user-avatar img-thumbnail")
+  %p.well= t("search.show.no_result")
 .row
-  %strong= "Informations"
-  %table.table.table-bordered
-    %body
-      %tr
-        %td= "WOOPS"
-        %td= "NONE LEFT !"
-.row
-  -# TODO Insert correct button here
-  -# %btn.btn.btn-lg.btn-danger.js-deny-user{ style: "margin-bottom: 5px", data: { profession: user.profession, update_url: user_deny_profile_url(user.id) } }= t("search.next")
-  -# %btn.btn.btn-lg.btn-success.js-contact-user{ style: "margin-bottom: 5px", data: { update_url: user_url(user), user_id: user.id } }= t("search.contact")
-
-
+  = link_to t("search.show.back_to_search"), search_path, class: 'btn btn-lg btn-primary text-center'
