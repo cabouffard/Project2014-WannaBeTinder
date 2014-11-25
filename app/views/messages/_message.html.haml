@@ -3,8 +3,8 @@
     .pull-left
       = small_user_avatar(message.user)
     .media-body
-      %small.pull-right.time
+      %small.js-date.pull-right.time{ title: I18n.localize(message.created_at, format: '%A, %d %B %l:%M %p') }
         = icon("fa fa-clock-o")
-        = message.created_at.strftime('%H:%M')
+        = time_ago_in_words(message.created_at)
       %h5.media-heading= message.user.name
       %small.col-lg-10= message.body

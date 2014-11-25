@@ -1,0 +1,23 @@
+%footer.text-center
+  .footer-above
+    .container
+      .row
+        .footer-col.col-md-4
+          %h3= "Location"
+          %p
+            3481 Melrose Place
+            %br
+              Beverly Hills, CA 90210
+        .footer-col.col-md-4
+        .footer-col.col-md-4.col-md-offet-4
+          %h3= "About Freelancer"
+          %p
+            = "Freelance is a free to use, open source Bootstrap theme created by"
+            = succeed "." do
+              %a{:href => "http://startbootstrap.com"} Start Bootstrap
+  .footer-below
+    .container
+      .row
+        .col-lg-12
+          = t("footer.copyright", date: Date.today.year)
+

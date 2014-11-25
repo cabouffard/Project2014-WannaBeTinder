@@ -13,6 +13,7 @@ class UserController < ApplicationController
 
   def clear_contacted_profiles
     current_user.contacted_users = []
+    current_user.conversations.delete_all
     current_user.save
   end
 

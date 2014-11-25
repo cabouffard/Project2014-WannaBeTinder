@@ -4,10 +4,10 @@ class UserConversationsController < ApplicationController
   end
 
   def show
-    @conversation = UserConversation.find params[:id]
+    @conversation = Conversation.find params[:id]
     @conversation.set_recipient(current_user)
     @message = Message.new
-    @message.conversation = @conversation.conversation
+    @message.conversation = @conversation
     @message.user = current_user
   end
 

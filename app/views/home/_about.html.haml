@@ -1,0 +1,22 @@
+%section#about.success
+  .container
+    .row
+      .col-lg-12.text-center
+        %h2= "À Propos"
+        %hr.star-light
+    .row
+      .col-lg-4.col-lg-offset-2
+        %p
+          = "Le projet est basé sur la fameuse application"
+          = succeed "." do
+            = link_to "Tinder", "http://www.gottinder.com", class: "dark"
+          = "Cependant, le but du projet est de rechercher rapidement des Entrepreneurs, Designers, Developpeur avec qui vous pouvez discuter pour rapidement créer des liens pour la créations d'un projet."
+      .col-lg-4
+        %p= "Le projet doit comprendre minimalement les éléments suivants :"
+        %ul
+          %li= "implémentation d’un serveur"
+          %li= "utilisation d’un service web commercial ou REST"
+          %li= "implémentation d’un service web « maison » ou REST"
+          %li= "client mobile sur téléphone cellulaire ou sur tablette. Un projet impliquant un réseau de capteurs est aussi considéré comme équivalent."
+          %li= "utilisation d’informations de géolocalisation et personnalisation selon le contexte (lieu, heure, historique, profil…)."
+

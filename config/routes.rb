@@ -55,7 +55,7 @@ Rails.application.routes.draw do
 
   resources :user do
     resources :conversations, controller: :user_conversations
-    resources :messages, :controller => "messages"
+    resources :messages, controller: :messages
     put "deny_profile", to: "user#update_denied_profiles"
     put "notify", to: "user#notify_user"
     put "clear_denied_list", to: "user#clear_denied_profiles"
