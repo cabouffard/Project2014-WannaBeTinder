@@ -15,9 +15,14 @@ Rails.application.routes.draw do
   # Root
   root to: "home#redirect_or_index"
 
-  namespace :api, defaults: { format: :json } do
+  namespace :api do
     namespace :v1 do
-      resources :user
+      resources :user, only: [:index, :show]
+      resources :profession, only: :index
+      resources :search, ony: :index
+      put "deny_profile", to: "user#update_denied_profiles"
+      put "notify", to: "user#notify_user"
+
       devise_for :users, skip: [:registrations, :password, :confirmation]
       devise_scope :user do
         resources :sessions, only: [:create, :destroy]

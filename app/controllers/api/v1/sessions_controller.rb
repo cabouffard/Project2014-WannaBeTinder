@@ -11,12 +11,21 @@ class Api::V1::SessionsController < Devise::SessionsController
   before_filter :authenticate_entity!, :only => [:destroy]
 
   def create
-    warden.authenticate(scope: resource_name)
-    if current_user.nil?
-      render json: { error: "Login crendentials failed" }, status: :unauthorized
-    else
-      render json: { message: current_user }, status: :ok
-    end
+   user = User.find_for_database_authentication(email: user_params[:email])
+
+   if user && user.valid_password?(user_params[:password])
+     sign_in user
+     render json: user
+   else
+     render json: { error: "Login crendentials failed" }, status: :unauthorized
+   end
+
+    # warden.authenticate(scope: resource_name)
+    # if current_user.nil?
+    #   render json: { error: "Login crendentials failed" }, status: :unauthorized
+    # else
+    #   render json: current_user, status: :ok
+    # end
   end
 
   def destroy
