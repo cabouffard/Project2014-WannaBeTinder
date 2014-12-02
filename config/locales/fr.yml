@@ -52,7 +52,7 @@ fr:
   users:
     success_update: "Votre compte a bien été modifié."
     professions:
-      entrepreneur: "Entreprenneur"
+      entrepreneur: "Entrepreneur"
       designer: "Designer"
       developper: "Developpeur"
     profile:
