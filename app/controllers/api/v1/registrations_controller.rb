@@ -19,6 +19,15 @@ class Api::V1::RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  def update
+    sanitizer = devise_parameter_sanitizer.sanitize(:account_update)
+    if self.resource.update_attributes(sanitizer)
+      render json: { message: "Account information has been succesfully updated!" }, status: :ok
+    else
+      render json: { error: resource.errors }, status: :error
+    end
+  end
+
   protected
 
   def build_resource(hash = {})
@@ -29,6 +38,19 @@ class Api::V1::RegistrationsController < Devise::RegistrationsController
   end
 
   private
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:account_update) do |u|
+      u.permit(:picture, :picture_cache, :latitude, :longitude, :profession,
+               :email, :first_name, :last_name, :street, :city, :state,
+               :country, :password, :password_confirmation)
+    end
+
+    devise_parameter_sanitizer.for(:sign_up) do |u|
+      u.permit(:profession, :email, :password, :password_confirmation,
+               :first_name, :last_name)
+    end
+  end
 
   def user_params
     params.require(:user).permit(:profession, :email, :password,

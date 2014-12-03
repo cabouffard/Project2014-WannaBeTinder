@@ -16,7 +16,7 @@ class MessagesController < ApplicationController
 
       @conversation = @message.conversation
       @recipient = @message.conversation.to
-      puts @message
+
       if @message.save
         flash.now[:success] = 'Your comment was successfully posted!'
       else

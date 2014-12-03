@@ -76,7 +76,7 @@ fr:
     success_update: "Votre compte a été modifié avec succèss."
     professions:
       entrepreneur: "Entrepreneur"
-      designer: "Concepteur"
+      designer: "Designer"
       developper: "Développeur"
     profile:
       details: "Détails"
@@ -111,9 +111,9 @@ fr:
 
   conversation:
     index:
-      title: "Conversations (fr)"
+      title: "Conversations"
     show:
-      title: "Chats (fr)"
+      title: "Chats"
 
   distance:
     centi:

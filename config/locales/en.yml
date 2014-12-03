@@ -112,9 +112,9 @@ en:
 
   conversation:
     index:
-      title: "Conversations (en)"
+      title: "Conversations"
     show:
-      title: "Chats (en)"
+      title: "Chats"
 
   distance:
     centi:

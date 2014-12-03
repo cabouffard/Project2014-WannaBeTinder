@@ -3,8 +3,6 @@ class RegistrationsController < Devise::RegistrationsController
 
   def update
     sanitizer = devise_parameter_sanitizer.sanitize(:account_update)
-    # self.resource.picture = sanitizer[:picture]
-    # self.resource.save
     if self.resource.update_attributes(sanitizer)
       flash[:success] = t("users.success_update")
       redirect_to root_url

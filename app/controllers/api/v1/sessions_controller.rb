@@ -15,7 +15,7 @@ class Api::V1::SessionsController < Devise::SessionsController
 
    if user && user.valid_password?(user_params[:password])
      sign_in user
-     render json: user
+     render json: user, status: :ok, serializer: PrivateUserSerializer
    else
      render json: { error: "Login crendentials failed" }, status: :unauthorized
    end

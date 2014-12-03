@@ -74,6 +74,8 @@ class User < ActiveRecord::Base
 
   geocoded_by :current_sign_in_ip   # can also be an IP address
 
+  attr_accessor :distance_to_text
+
   reverse_geocoded_by :latitude, :longitude do |obj, results|
     if geo = results.first
       obj.street  = geo.street_address
@@ -119,4 +121,5 @@ class User < ActiveRecord::Base
   def self.professions
     ["entrepreneur", "designer", "developper"]
   end
+
 end
