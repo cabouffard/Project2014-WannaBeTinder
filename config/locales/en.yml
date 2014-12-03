@@ -38,7 +38,7 @@ en:
     of: "Of"
 
   footer:
-    copyright: "All rights reserved © %{date} Wannabe Tinder"
+    copyright: "MIT license © %{date} WannabeTinder"
 
   fields_info:
     optional: "(optional)"
@@ -52,7 +52,7 @@ en:
   users:
     success_update: "Your account was successfully updated."
     professions:
-      entrepreneur: "Entreprenneur"
+      entrepreneur: "Entrepreneur"
       designer: "Designer"
       developper: "Developper"
     profile:
@@ -62,7 +62,7 @@ en:
   location:
     get_location: "Find my location automaticly"
     title_confirm: "Is this where you are?"
-    confirm_location: "Yup, this is where I live"
+    confirm_location: "Yup"
 
   account:
     title_general: "General Information"
@@ -74,24 +74,24 @@ en:
 
   search:
     index:
-      title: "PICK PLEASE !!!"
+      title: "Welcome"
       change_category: "I am looking for a different profession"
       wrong_location: "These people are not from my location"
-      no_results: "We are sorry, there is currently no profiles for the profession %{profession}"
-      looking_for: "I am looking for"
-      other_options: "Nah, I want to do the following"
+      no_results: "We are sorry, there are currently no available profile for the profession %{profession}"
+      looking_for: "I am looking for a..."
+      other_options: "Nah, I want to..."
     show:
       next: "Not interested"
       contact: "Contact this person"
-      no_result: "Sorry, there are no more profile for your search, please try again in a few days!"
+      no_result: "Sorry, there are no profile left according to your criteria; please try again in a few days!"
       back_to_search: "Back to search"
 
 
   conversation:
     index:
-      title: "Conversations"
+      title: "Conversations (en)"
     show:
-      title: "Chats"
+      title: "Chats (en)"
 
   distance:
     centi:

@@ -38,7 +38,7 @@ fr:
     of: "De"
 
   footer:
-    copyright: "Tous droits réservés © %{date} Wannabe Tinder"
+    copyright: "License MIT © %{date} WannabeTinder"
 
   fields_info:
     optional: "(optionnel)"
@@ -50,19 +50,19 @@ fr:
     fr: "Français"
 
   users:
-    success_update: "Votre compte a bien été modifié."
+    success_update: "Votre compte a été modifié avec succèss."
     professions:
       entrepreneur: "Entrepreneur"
-      designer: "Designer"
-      developper: "Developpeur"
+      designer: "Concepteur"
+      developper: "Développeur"
     profile:
-      details: "Détailes"
+      details: "Détails"
       around: "Environ"
 
   location:
-    get_location: "Trouver ma location automatiquement"
+    get_location: "Trouver ma position automatiquement"
     title_confirm: "Est-ce là où vous êtes?"
-    confirm_location: "Ouais, stalker !"
+    confirm_location: "Ouais!"
 
   account:
     title_general: "Information générale"
@@ -74,23 +74,23 @@ fr:
 
   search:
     index:
-      title: "MAN, CHOISIS !!!"
+      title: "Bienvenue"
       change_category: "Je recherche une différente profession"
       wrong_location: "Ces personnes ne sont pas dans ma location"
-      no_results: "Nous sommes désolés, il n'y a actuellement pas de profils pour la profession %{profession}"
-      looking_for: "Je recherche..."
-      other_options: "Fuck off.. je veux faire..."
+      no_results: "Nous sommes désolés, il n'y a actuellement pas de profil disponible avec la profession %{profession}"
+      looking_for: "Je veux trouver un..."
+      other_options: "Non, je veux..."
     show:
       next: "Pas intéressé"
       contact: "Contacter cette personne"
-      no_result: "Désolé, il n'y a plus de profile pour votre recherche, veuillez réessayer de nouveau dans les jours qui suivent!"
+      no_result: "Désolé, il n'y a plus de profil correspondant à vos critères; veuillez réessayer dans les jours qui suivent!"
       back_to_search: "Retourner à la recherche"
 
   conversation:
     index:
-      title: "Conversations fr"
+      title: "Conversations (fr)"
     show:
-      title: "Chats fr"
+      title: "Chats (fr)"
 
   distance:
     centi:
