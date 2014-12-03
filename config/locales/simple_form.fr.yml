@@ -21,7 +21,7 @@ fr:
         distance: "Distance"
         password: "Mot de passe"
         password_confirmation: "Confirmer le mot de passe"
-        body: "Ecrivez une réponse ..."
+        body: "Écrivez une réponse..."
 
     placeholders:
       defaults:
