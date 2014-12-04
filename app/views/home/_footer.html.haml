@@ -3,19 +3,15 @@
     .container
       .row
         .footer-col.col-md-4
-          %h3= "Want to take part?"
+          %h3= t("home.footer.github.title")
           %p
-            = "WannabeTinder is hosted on "
             = succeed "." do
-              %a{:href => "https://github.com/cabouffard/Project2014-WannaBeTinder", target: "_blank"} Github
+              = t("home.footer.github.desc", href: link_to("Github", "https://github.com/cabouffard/Project2014-WannaBeTinder", target: "_blank")).html_safe
         .footer-col.col-md-4
         .footer-col.col-md-4.col-md-offet-4
-          %h3= "Theme"
+          %h3= t("home.footer.freelancer.title")
           %p
-            = "WannabeTinder uses"
-            = succeed "," do
-              %a{:href => "http://startbootstrap.com/template-overviews/freelancer/", target: "_blank"} Freelancer
-            = "a free to use and open source Bootstrap theme."
+            = t("home.footer.freelancer.desc", href: link_to("Freelancer", "http://startbootstrap.com/template-overviews/freelancer/", target: "_blank")).html_safe
   .footer-below
     .container
       .row

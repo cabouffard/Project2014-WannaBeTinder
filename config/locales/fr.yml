@@ -49,6 +49,29 @@ fr:
     en: "Anglais"
     fr: "Français"
 
+  home:
+    header:
+      title: "WannabeTinder"
+      project: "Projet d'IFT604"
+    team:
+      title: "Notre équipe"
+    about:
+      title: "À propos"
+      project_desc: "Le projet est basé sur la fameuse application %{href}. Cependant, le but du projet est de rechercher rapidement des Entrepreneurs, Designers et Développeurs avec qui vous pouvez discuter pour rapidement créer des liens pour la créations d'un projet."
+      project_contains: "Le projet doit comprendre minimalement les éléments suivants :"
+      server_impl: "implémentation d’un serveur"
+      rest_usage: "utilisation d’un service web commercial ou REST"
+      rest_impl: "implémentation d’un service web « maison » ou REST"
+      mobile_client: "client mobile sur téléphone cellulaire ou sur tablette. Un projet impliquant un réseau de capteurs est aussi considéré comme équivalent."
+      geo_usage: "utilisation d’informations de géolocalisation et perslonnalisation selon le contexte (lieu, heure, historique, profil…)."
+    footer:
+      github:
+        title: "Vous souhaitez contribuer?"
+        desc: "WannabeTinder est hébergé sur %{href}"
+      freelancer:
+        title: "Thème"
+        desc: "WannabeTinder utilise %{href}, un thème Bootstrap gratuit et open source."
+
   users:
     success_update: "Votre compte a été modifié avec succèss."
     professions:

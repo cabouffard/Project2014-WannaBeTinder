@@ -10,8 +10,8 @@
     .collapse.navbar-collapse
       %ul.nav.navbar-nav.navbar-right
         %li.page-scroll
-          %a{href: "#team"}= "Our team"
+          %a{href: "#team"}= t("home.team.title")
         %li.page-scroll
-          %a{href: "#about"}= "About"
+          %a{href: "#about"}= t("home.about.title")
         %li.page-scroll= link_to t("navbar.user.sign_in"), new_user_session_path(locale: nil)
         %li.page-scroll= link_to t("locales.toggle"), locale: reverse_locale(I18n.locale)
