@@ -127,6 +127,3 @@ en:
       one: "kilometer"
       other: "kilometers"
     billion: "gazillion-distance"
-
-  mailer:
-    footer: "TODO: ADD FOOTER"

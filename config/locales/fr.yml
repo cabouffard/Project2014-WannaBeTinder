@@ -127,9 +127,6 @@ fr:
       other: "kilomètres"
     billion: "gazillion-distance"
 
-  mailer:
-    footer: "TODO: AJOUTE FOOTER"
-
   date:
     abbr_day_names:
       - dim

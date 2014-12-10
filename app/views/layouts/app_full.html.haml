@@ -14,4 +14,4 @@
             .app-content
               = yield
       .app-footer
-        = render "layouts/footer"
+        = t("footer.copyright", date: Date.today.year)
