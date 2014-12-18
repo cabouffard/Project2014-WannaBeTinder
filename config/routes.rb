@@ -84,6 +84,13 @@ Rails.application.routes.draw do
 
       devise_for :users, skip: [:registrations, :password, :confirmation]
       devise_scope :user do
+      resource :registration,
+        only: [:edit, :update],
+        path: "account",
+        controller: "registrations",
+        as: :user_registration do
+          get :cancel
+        end
         resources :sessions, only: [:create, :destroy]
       end
     end

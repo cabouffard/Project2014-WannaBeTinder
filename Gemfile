@@ -104,6 +104,9 @@ gem "nokogiri"
 gem 'faye-rails', '~> 2.0'
 gem 'thin'
 
+# Used in order to parse html entities from api context
+gem 'htmlentities'
+
 group :development do
   # Fake Datas
   gem "factory_girl_rails"
